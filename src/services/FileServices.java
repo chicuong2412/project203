@@ -147,6 +147,8 @@ public class FileServices{
                 byte[] byteData1 = each.getUsername().getBytes();
                 byte[] byteData2 = each.getPassword().getBytes();
                 byte[] byteData3 = each.getFullName().getBytes();
+                byte[] byteData4 = each.getStudentID().getBytes();
+                byte[] byteData5 = (each.isGender() == true) ? "true".getBytes():"false".getBytes();
                 try {
                     int size = byteData1.length;
                     dos.writeInt(size);
@@ -158,6 +160,12 @@ public class FileServices{
                     dos.writeInt(size);
                     bos.write(byteData3);
                     dos.writeInt(each.getYearAttend());
+                    size = byteData4.length;
+                    dos.writeInt(size);
+                    bos.write(byteData4);
+                    size = byteData5.length;
+                    dos.writeInt(size);
+                    bos.write(byteData5);
                     dos.flush();
 
                 } catch (IOException ex) {
@@ -195,11 +203,21 @@ public class FileServices{
                         dis.read(data);
                         String fullName = new String(data);
                         int yearAttend = dis.readInt();
+                        size = dis.readInt();
+                        data = new byte[size];
+                        dis.read(data);
+                        String studentID = new String(data);
+                        size = dis.readInt();
+                        data = new byte[size];
+                        dis.read(data);
+                        boolean gender = ((new String(data).equalsIgnoreCase("true"))? true: false);
                         Account acc = new Account(
                          name, 
                                 password,
                                 fullName, 
-                                yearAttend);
+                                yearAttend, 
+                                studentID, 
+                                gender);
                         listAcc.add(acc); 
                     }
                  dis.close();

@@ -1,13 +1,33 @@
 package enity;
 
+import java.io.Serializable;
 
-public class Account {
+
+public class Account implements Serializable{
     private String username;
     private String password;
     private String fullName;
     private int yearAttend;
+    private String studentID;
+    private boolean gender;
 
+    public String getStudentID() {
+        return studentID;
+    }
 
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+    
+    
     public String getFullName() {
         return fullName;
     }
@@ -25,11 +45,17 @@ public class Account {
     }
    
     public Account(String username, 
-            String password, String fullName, int yearAttend) {
+            String password, 
+            String fullName, 
+            int yearAttend, 
+            String studentID, 
+            boolean gender) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.yearAttend = yearAttend;
+        this.studentID = studentID;
+        this.gender = gender;
     }
  
     public String getUsername() {

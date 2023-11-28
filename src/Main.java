@@ -1,5 +1,5 @@
 
-import UI.LoginFrame;
+import UI_Control.LoginFrame;
 
 
 public class Main {

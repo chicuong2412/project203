@@ -1,7 +1,7 @@
 package services;
 
-import accountDAO.AllUserProgress;
-import static accountDAO.AllUserProgress.getListAccounts;
+import userDAO.AllUserProgress;
+import static userDAO.AllUserProgress.getListAccounts;
 import enity.Account;
 import java.util.ArrayList;
 import java.util.Set;
@@ -9,8 +9,8 @@ import java.util.Set;
 
 public class AccountServices {
     
-    public static void addAccount(String username, String password, String fullName, int yearAttend){
-        Account acc = new Account(username, password, fullName, yearAttend);
+    public static void addAccount(String username, String password, String fullName, int yearAttend, String studentID, boolean gender){
+        Account acc = new Account(username, password, fullName, yearAttend, studentID, gender);
         FileServices.copyExcelFile(username);
         ArrayList<Account> listAccounts = AllUserProgress.getListAccounts();
         listAccounts.add(acc);

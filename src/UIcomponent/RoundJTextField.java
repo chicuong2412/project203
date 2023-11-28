@@ -10,6 +10,15 @@ import javax.swing.border.EmptyBorder;
 
 public class RoundJTextField extends JTextField{
     
+    private Color color;
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
     
     public RoundJTextField(){
         setBackground(new Color(255, 255, 255, 0));
