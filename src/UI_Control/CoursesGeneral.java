@@ -40,7 +40,11 @@ public class CoursesGeneral extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("List of courses you can sign up for");
 
-        jTabbedPane4.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane4.setBackground(new java.awt.Color(2, 30, 68));
+        jTabbedPane4.setForeground(new java.awt.Color(255, 255, 255));
+        jTabbedPane4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        jPanel1.setBackground(new java.awt.Color(39, 64, 139));
 
         jSearchTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -54,6 +58,9 @@ public class CoursesGeneral extends javax.swing.JFrame {
             }
         });
 
+        nameCheckRaidoButton.setBackground(new java.awt.Color(39, 64, 139));
+        nameCheckRaidoButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        nameCheckRaidoButton.setForeground(new java.awt.Color(242, 242, 242));
         nameCheckRaidoButton.setText("Name");
         nameCheckRaidoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +98,9 @@ public class CoursesGeneral extends javax.swing.JFrame {
             listAvailable.getColumnModel().getColumn(3).setMaxWidth(200);
         }
 
+        idCheckRaidoButton.setBackground(new java.awt.Color(39, 64, 139));
+        idCheckRaidoButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        idCheckRaidoButton.setForeground(new java.awt.Color(242, 242, 242));
         idCheckRaidoButton.setText("ID");
         idCheckRaidoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,6 +144,11 @@ public class CoursesGeneral extends javax.swing.JFrame {
 
         jTabbedPane4.addTab("Available Courses", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(39, 64, 139));
+
+        nameCheckAll.setBackground(new java.awt.Color(39, 64, 139));
+        nameCheckAll.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        nameCheckAll.setForeground(new java.awt.Color(242, 242, 242));
         nameCheckAll.setText("Name");
         nameCheckAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +156,9 @@ public class CoursesGeneral extends javax.swing.JFrame {
             }
         });
 
+        idCheckAll.setBackground(new java.awt.Color(39, 64, 139));
+        idCheckAll.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        idCheckAll.setForeground(new java.awt.Color(242, 242, 242));
         idCheckAll.setText("ID");
         idCheckAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,6 +245,8 @@ public class CoursesGeneral extends javax.swing.JFrame {
 
         jTabbedPane4.addTab("All Courses", jPanel2);
 
+        back.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        back.setForeground(new java.awt.Color(2, 30, 68));
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,7 +270,7 @@ public class CoursesGeneral extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(back)
-                .addContainerGap(521, Short.MAX_VALUE))
+                .addContainerGap(545, Short.MAX_VALUE))
             .addComponent(jTabbedPane4)
         );
 
