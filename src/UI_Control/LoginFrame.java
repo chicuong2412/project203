@@ -243,7 +243,6 @@ public class LoginFrame extends javax.swing.JFrame{
 
     private void signUPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUPMouseClicked
         new SignUpForm().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_signUPMouseClicked
 
     /**
