@@ -20,10 +20,10 @@ public class IconSize_Services {
     }
     
     public Icon getIcon(){
-        ImageIcon imageIcon = new ImageIcon(GetImage.class.getResource(path));
+        ImageIcon imageIcon = new ImageIcon(GetImage.class.getResource(path));//get imange from picture package through GetImage
         Image image = imageIcon.getImage();
-        Image imgScale = image.getScaledInstance(lable.getWidth(), lable.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon tempt = new ImageIcon(imgScale);
+        Image imgScale = image.getScaledInstance(lable.getWidth(), lable.getHeight(), Image.SCALE_SMOOTH);//Scale the picture
+        ImageIcon tempt = new ImageIcon(imgScale);//Change Image to ImageIcon
         return tempt;
     }
     
