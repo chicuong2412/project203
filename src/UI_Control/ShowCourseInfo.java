@@ -1,6 +1,9 @@
 package UI_Control;
 
 import enity.Course;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import picture.GetImage;
 import static services.CourseServices.getPrerequisitesString;
 
 /**
@@ -17,6 +20,9 @@ public class ShowCourseInfo extends javax.swing.JFrame {
         this.course = course;
         this.setLocationRelativeTo(null);
         showInfo();
+        ImageIcon icon = new ImageIcon(GetImage.class.getResource("courseinfo_icon.png"));
+        Image image = icon.getImage();
+        this.setIconImage(image);
     }
 
     /**
@@ -50,6 +56,7 @@ public class ShowCourseInfo extends javax.swing.JFrame {
         jProgressBar1 = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Course Information");
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 

@@ -2,9 +2,12 @@ package UI_Control;
 
 import static userDAO.AllUserProgress.*;
 import enity.Course;
+import java.awt.Image;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import picture.GetImage;
 import static services.CourseServices.checkPrerequisites;
 import static services.CourseServices.getListByStatusCourses;
 import services.TableChangeGPA;
@@ -19,6 +22,9 @@ public class CourseUpdate extends javax.swing.JFrame {
         getTableComplete("", "");
         getTableGPA("", "");
         this.setLocationRelativeTo(null);
+        ImageIcon icon = new ImageIcon(GetImage.class.getResource("courseupdate_icon.png"));
+        Image image = icon.getImage();
+        this.setIconImage(image);
     }
 
     public void getTableComplete(String choice, String searchKey) {

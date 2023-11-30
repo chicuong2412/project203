@@ -1,6 +1,9 @@
 package UI_Control;
 
 import enity.Account;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import picture.GetImage;
 import services.IconSize_Services;
 
 public class AccountInformation extends javax.swing.JFrame {
@@ -14,6 +17,9 @@ public class AccountInformation extends javax.swing.JFrame {
         } else {
             imageAvatar.setIcon(new IconSize_Services("female.png", imageAvatar).getIcon());
         }
+        ImageIcon icon = new ImageIcon(GetImage.class.getResource("information_icon.png"));
+        Image image = icon.getImage();
+        this.setIconImage(image);
         this.setLocationRelativeTo(null);
     }
 
@@ -205,7 +211,7 @@ public class AccountInformation extends javax.swing.JFrame {
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

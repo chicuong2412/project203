@@ -1,7 +1,9 @@
 package UI_Control;
 
 import enity.Account;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import picture.GetImage;
 import services.AccountServices;
 import static services.AccountServices.getAccount;
 import static services.AccountServices.updateAccountInformation;
@@ -22,18 +24,18 @@ public class AccountInfomationChange extends javax.swing.JFrame {
         fullNameTextField.setText(acc.getFullName());
         usernameTextField.setText(acc.getUsername());
         studentIdTextField.setText(acc.getStudentID());
-        jGenderCombo.setSelectedIndex((acc.isGender())? 0: 1);
+        jGenderCombo.setSelectedIndex((acc.isGender()) ? 0 : 1);
         yearAttendTextField.setText(String.valueOf(acc.getYearAttend()));
     }
 
-    public void avatarGender(){
+    public void avatarGender() {
         if (jGenderCombo.getSelectedIndex() == 0) {
             imageAvatar.setIcon(new IconSize_Services("male1.png", imageAvatar).getIcon());
         } else {
             imageAvatar.setIcon(new IconSize_Services("female.png", imageAvatar).getIcon());
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -267,28 +269,33 @@ public class AccountInfomationChange extends javax.swing.JFrame {
         boolean gender = (jGenderCombo.getSelectedIndex() == 0) ? true : false;
         String newFullName = fullNameTextField.getText();
         String newStudentID = studentIdTextField.getText();
-        if (getAccount(newUsername) == null 
-                || newUsername.equals(oldUsername)){
+        if (getAccount(newUsername) == null
+                || newUsername.equals(oldUsername)) {
             if (AccountServices.getAccountByStudentID(newStudentID) == null
-                    || newStudentID.equals(acc.getStudentID())){
-                if (oldPassword.equals(acc.getPassword()) ){
-                    int confirm = JOptionPane.showConfirmDialog(this, 
-                            "Are you sure to change these information", 
-                            "Update Information Confirm", JOptionPane.YES_NO_OPTION);
-                    if (confirm == JOptionPane.YES_OPTION){
-                        Account acc = new Account(newUsername, 
-                                (newPassword.equals("") ? oldPassword:newPassword), 
-                                newFullName, 
-                                newYearAttend, 
-                                newStudentID, 
+                    || newStudentID.equals(acc.getStudentID())) {
+                if (oldPassword.equals(acc.getPassword())) {
+                    int confirm = JOptionPane.showConfirmDialog(this,
+                            "Are you sure to change these information",
+                            "Update Information Confirm",
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.YES_NO_OPTION,
+                            new ImageIcon(GetImage.class.getResource("questionmark.png")));
+                    if (confirm == JOptionPane.YES_OPTION) {
+                        Account acc = new Account(newUsername,
+                                (newPassword.equals("") ? oldPassword : newPassword),
+                                newFullName,
+                                newYearAttend,
+                                newStudentID,
                                 gender);
                         updateAccountInformation(acc, olduserID, oldUsername);
-                        JOptionPane.showMessageDialog(this, 
-                                "Succesfully!!! Reopen the app to apply new information", 
-                                "Successfully" , JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(this,
+                                "Succesfully!!! Reopen the app to apply new information",
+                                "Successfully",
+                                JOptionPane.INFORMATION_MESSAGE,
+                                new ImageIcon(GetImage.class.getResource("complete.png")));
                         this.menu.dispose();
                         this.dispose();
-                        
+
                     }
                 } else {
                     JOptionPane.showMessageDialog(this,
@@ -298,14 +305,19 @@ public class AccountInfomationChange extends javax.swing.JFrame {
                 }
             } else {
                 JOptionPane.showMessageDialog(this,
-                            "This student ID existed",
-                            "Same student ID",
-                            JOptionPane.ERROR_MESSAGE);
+                        "This student ID existed",
+                        "Same student ID",
+                        JOptionPane.ERROR_MESSAGE,
+                        new ImageIcon(GetImage.class.getResource("cancel.png")));
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Error this username already existed");
+            JOptionPane.showMessageDialog(this,
+                    "Error this username already existed",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE,
+                    new ImageIcon(GetImage.class.getResource("cancel.png")));
         }
-        
+
     }//GEN-LAST:event_updateInfoButtonActionPerformed
 
     public boolean checkBlankSpace() {
@@ -318,7 +330,7 @@ public class AccountInfomationChange extends javax.swing.JFrame {
         }
         return true;
     }
-    
+
     private MainMenu menu;
     private Account acc;
     // Variables declaration - do not modify//GEN-BEGIN:variables

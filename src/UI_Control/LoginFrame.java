@@ -2,7 +2,9 @@
 package UI_Control;
 
 import enity.Account;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import picture.GetImage;
 import static services.AccountServices.*;
 
 /**
@@ -225,10 +227,16 @@ public class LoginFrame extends javax.swing.JFrame{
                 new MainMenu(acc).setVisible(true);
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(this, "Wrong password");
+                JOptionPane.showMessageDialog(this, "Wrong password", 
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE,
+                        new ImageIcon(GetImage.class.getResource("cancel.png")));
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Wrong username");
+            JOptionPane.showMessageDialog(this, "Wrong username", 
+                    "Error",
+                        JOptionPane.ERROR_MESSAGE,
+                        new ImageIcon(GetImage.class.getResource("cancel.png")));
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 

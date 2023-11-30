@@ -1,7 +1,9 @@
 package UI_Control;
 
 import UI_Control.LoginFrame;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import picture.GetImage;
 import static services.AccountServices.addAccount;
 import static services.AccountServices.getAccount;
 import static services.AccountServices.getAccountByStudentID;
@@ -211,21 +213,25 @@ public class SignUpForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void avatarGender(){
+    public void avatarGender() {
         if (jGenderCombo.getSelectedIndex() == 0) {
             imageAvatar.setIcon(new IconSize_Services("male1.png", imageAvatar).getIcon());
         } else {
             imageAvatar.setIcon(new IconSize_Services("female.png", imageAvatar).getIcon());
         }
     }
-    
+
     private void signUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseClicked
 
         if (checkBlankSpace()) {
             String usernameText = this.usernameTextField.getText();
             String passwordText = String.valueOf(this.passwordPasswordField.getPassword());
             if (getAccount(usernameText) != null) {
-                JOptionPane.showMessageDialog(this, "Error this username already existed");
+                JOptionPane.showMessageDialog(this,
+                        "Error this username already existed",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE,
+                        new ImageIcon(GetImage.class.getResource("cancel.png")));
             } else {
                 if (getAccountByStudentID(studentIDTextField.getText()) == null) {
                     int id = JOptionPane.showConfirmDialog(this, "Are you sure to create?");
@@ -244,15 +250,17 @@ public class SignUpForm extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this,
                             "This student ID existed",
                             "Same student ID",
-                            JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.ERROR_MESSAGE,
+                            new ImageIcon(GetImage.class.getResource("cancel.png")));
                 }
 
             }
         } else {
-            JOptionPane.showMessageDialog(this, 
-                    "Please fill every box", 
-                    "Error", 
-                    JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,
+                    "Please fill every box",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE,
+                    new ImageIcon(GetImage.class.getResource("cancel.png")));
         }
     }//GEN-LAST:event_signUpMouseClicked
 

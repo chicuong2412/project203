@@ -1,6 +1,9 @@
 package UI_Control;
 
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import picture.GetImage;
 import services.TableAllInformation;
 import services.TableAvailable;
 
@@ -15,6 +18,9 @@ public class CoursesGeneral extends javax.swing.JFrame {
         getTableAvaiable("" , "");
         getTableAll("" ,  ""); 
         this.setLocationRelativeTo(null);
+        ImageIcon icon = new ImageIcon(GetImage.class.getResource("courseGeneral_Icon.png"));
+        Image image = icon.getImage();
+        this.setIconImage(image);
     }
 
     @SuppressWarnings("unchecked")
