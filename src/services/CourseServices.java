@@ -1,13 +1,9 @@
 package services;
 
-import enity.Account;
 import enity.Course;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import static userDAO.AllUserProgress.setCourses;
 
 public class CourseServices{
 

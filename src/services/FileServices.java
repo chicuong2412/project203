@@ -142,7 +142,6 @@ public class FileServices {
             File file1 = new File("account.xlsx");
             FileInputStream fis = new FileInputStream("account.xlsx");
             XSSFWorkbook fileExcel = new XSSFWorkbook(fis);
-            System.out.println(fileExcel.getNumberOfSheets());
             XSSFSheet data;
             XSSFRow row;
             XSSFCell cell;

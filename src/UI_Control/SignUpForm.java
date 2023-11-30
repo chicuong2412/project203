@@ -1,7 +1,6 @@
 package UI_Control;
 
 import UI_Control.LoginFrame;
-import enity.Account;
 import javax.swing.JOptionPane;
 import static services.AccountServices.addAccount;
 import static services.AccountServices.getAccount;

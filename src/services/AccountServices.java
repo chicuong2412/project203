@@ -24,7 +24,7 @@ public class AccountServices {
         File fileDelete = new File("data\\" + oldUsername + ".xlsx");
         updateAccount(acc, oldUserID);
         if (!acc.getUsername().equals(oldUsername)) {
-            System.out.println(fileDelete.delete());
+            fileDelete.deleteOnExit();
         }
         AllUserProgress.data = FileServices.readAllUsersCourses();
     }

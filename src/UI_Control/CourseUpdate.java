@@ -12,11 +12,6 @@ import services.TableCoursesStatus;
 
 public class CourseUpdate extends javax.swing.JFrame {
 
-    /**
-     * Creates new form testFrame
-     *
-     * @param menu
-     */
     public CourseUpdate(MainMenu menu) {
         initComponents();
         this.menu = menu;
@@ -38,7 +33,6 @@ public class CourseUpdate extends javax.swing.JFrame {
         listIncompleteCourses.setModel(new TableCoursesStatus(this.menu.UserCourses.getArrayCourses(),
                 false,
                 searchKey, choice).toTable());
-//        list.setBackground(Color.GRAY);
     }
 
     public void getTableGPA(String choice, String searchKey) {
