@@ -50,8 +50,7 @@ public class FileServices {
                 cell = row.createCell(5);
                 cell.setCellValue(Double.parseDouble(String.valueOf(dataStore.get(5))));
                 cell = row.createCell(6);
-                //(String.valueOf(dataStore.get(5)).equalsIgnoreCase("true"))?true:false
-                cell.setCellValue((String.valueOf(dataStore.get(6))));
+                cell.setCellValue((boolean)dataStore.get(6));
                 cell = row.createCell(7);
                 cell.setCellValue(String.valueOf(dataStore.get(7)));
                 k++;
@@ -89,6 +88,9 @@ public class FileServices {
                         case NUMERIC:
                             information.add(cell.getNumericCellValue());
                             break;
+                        case BOOLEAN:
+                            information.add(cell.getBooleanCellValue());
+                            break;
                     }
                 }
                 ArrayList<String> tempt = new ArrayList<>();
@@ -102,7 +104,7 @@ public class FileServices {
                         String.valueOf(information.get(3)),
                         Double.parseDouble(String.valueOf(information.get(4))),
                         Double.parseDouble(String.valueOf(information.get(5))),
-                        (String.valueOf(information.get(6)).equalsIgnoreCase(("true"))) ? true : false,
+                        (boolean)information.get(6),
                         tempt);
                 courses.add(course);
             }
