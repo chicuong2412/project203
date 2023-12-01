@@ -40,7 +40,7 @@ public class TableAllInformation {
         return this.model;
     }
 
-    public String[] createRow(Course each) {
+    private String[] createRow(Course each) {
         Object[] rowInfo = toArrayList(each).toArray();
         rowInfo[4] = !String.valueOf(rowInfo[6]).equalsIgnoreCase("true")? "None":rowInfo[4];
         return new String[]{String.valueOf(rowInfo[0]), 

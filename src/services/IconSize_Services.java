@@ -11,7 +11,6 @@ import picture.GetImage;
 public class IconSize_Services {
     
     private String path;
-    private Icon icon;
     private JLabel lable;
 
     public IconSize_Services(String path, JLabel lable){
@@ -19,7 +18,7 @@ public class IconSize_Services {
         this.lable = lable;
     }
     
-    public Icon getIcon(){
+    public Icon getIconAsLabelSize(){
         ImageIcon imageIcon = new ImageIcon(GetImage.class.getResource(path));//get imange from picture package through GetImage
         Image image = imageIcon.getImage();
         Image imgScale = image.getScaledInstance(lable.getWidth(), lable.getHeight(), Image.SCALE_SMOOTH);//Scale the picture

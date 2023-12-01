@@ -20,7 +20,7 @@ public class AccountInfomationChange extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-    public void showInfo() {
+    private void showInfo() {
         fullNameTextField.setText(acc.getFullName());
         usernameTextField.setText(acc.getUsername());
         studentIdTextField.setText(acc.getStudentID());
@@ -28,11 +28,11 @@ public class AccountInfomationChange extends javax.swing.JFrame {
         yearAttendTextField.setText(String.valueOf(acc.getYearAttend()));
     }
 
-    public void avatarGender() {
+    private void avatarGender() {
         if (jGenderCombo.getSelectedIndex() == 0) {
-            imageAvatar.setIcon(new IconSize_Services("male1.png", imageAvatar).getIcon());
+            imageAvatarLabel.setIcon(new IconSize_Services("male1.png", imageAvatarLabel).getIconAsLabelSize());
         } else {
-            imageAvatar.setIcon(new IconSize_Services("female.png", imageAvatar).getIcon());
+            imageAvatarLabel.setIcon(new IconSize_Services("female.png", imageAvatarLabel).getIconAsLabelSize());
         }
     }
 
@@ -42,25 +42,24 @@ public class AccountInfomationChange extends javax.swing.JFrame {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        fullNameLabel = new javax.swing.JLabel();
         fullNameTextField = new UIcomponent.RoundJTextField();
-        jLabel3 = new javax.swing.JLabel();
+        userNameLabel = new javax.swing.JLabel();
         usernameTextField = new UIcomponent.RoundJTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        genderLabel = new javax.swing.JLabel();
+        studentIDLabel = new javax.swing.JLabel();
         studentIdTextField = new UIcomponent.RoundJTextField();
-        jLabel5 = new javax.swing.JLabel();
+        yearAttendLabel = new javax.swing.JLabel();
         yearAttendTextField = new UIcomponent.RoundJTextField();
         jPanel3 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        imageAvatar = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
+        imageAvatarLabel = new javax.swing.JLabel();
         jGenderCombo = new javax.swing.JComboBox<>();
         updateInfoButton = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
+        oldPasswordLabel = new javax.swing.JLabel();
         oldPasswordField = new UIcomponent.RoundJTextPassword();
         newPasswordField = new UIcomponent.RoundJTextPassword();
-        jLabel9 = new javax.swing.JLabel();
+        newPasswordLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Account Information");
@@ -70,57 +69,50 @@ public class AccountInfomationChange extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(2, 30, 68));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(221, 196, 136));
-        jLabel1.setText("Full name");
+        fullNameLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        fullNameLabel.setForeground(new java.awt.Color(221, 196, 136));
+        fullNameLabel.setText("Full name");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(221, 196, 136));
-        jLabel3.setText("Username");
+        userNameLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        userNameLabel.setForeground(new java.awt.Color(221, 196, 136));
+        userNameLabel.setText("Username");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(221, 196, 136));
-        jLabel2.setText("Gender");
+        genderLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        genderLabel.setForeground(new java.awt.Color(221, 196, 136));
+        genderLabel.setText("Gender");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(221, 196, 136));
-        jLabel4.setText("Student ID");
+        studentIDLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        studentIDLabel.setForeground(new java.awt.Color(221, 196, 136));
+        studentIDLabel.setText("Student ID");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(221, 196, 136));
-        jLabel5.setText("Year attend");
+        yearAttendLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        yearAttendLabel.setForeground(new java.awt.Color(221, 196, 136));
+        yearAttendLabel.setText("Year attend");
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(2, 30, 68));
-        jLabel6.setText("Update Information");
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(2, 30, 68));
+        titleLabel.setText("Update Information");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(165, 165, 165)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(titleLabel)
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addGap(6, 6, 6)
+                .addComponent(titleLabel)
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        imageAvatar.setText("jLabel8");
+        imageAvatarLabel.setText("avatar");
 
         jGenderCombo.setForeground(new java.awt.Color(2, 30, 68));
         jGenderCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
@@ -139,13 +131,13 @@ public class AccountInfomationChange extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(221, 196, 136));
-        jLabel8.setText("Old password");
+        oldPasswordLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        oldPasswordLabel.setForeground(new java.awt.Color(221, 196, 136));
+        oldPasswordLabel.setText("Old password");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(221, 196, 136));
-        jLabel9.setText("New password");
+        newPasswordLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        newPasswordLabel.setForeground(new java.awt.Color(221, 196, 136));
+        newPasswordLabel.setText("New password");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,18 +146,18 @@ public class AccountInfomationChange extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(imageAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imageAvatarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
+                    .addComponent(yearAttendLabel)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1)))
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
+                            .addComponent(studentIDLabel)
+                            .addComponent(userNameLabel)
+                            .addComponent(fullNameLabel)))
+                    .addComponent(oldPasswordLabel)
+                    .addComponent(newPasswordLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -182,7 +174,7 @@ public class AccountInfomationChange extends javax.swing.JFrame {
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(yearAttendTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel2))
+                                                .addComponent(genderLabel))
                                             .addComponent(oldPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(newPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -201,34 +193,34 @@ public class AccountInfomationChange extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(fullNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
+                            .addComponent(fullNameLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
+                            .addComponent(userNameLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
+                            .addComponent(studentIDLabel)
                             .addComponent(studentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(imageAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(imageAvatarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                    .addComponent(yearAttendLabel)
                     .addComponent(yearAttendTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
+                    .addComponent(genderLabel)
                     .addComponent(jGenderCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(oldPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(oldPasswordLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(newPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(updateInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel9))
+                    .addComponent(newPasswordLabel))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -240,7 +232,7 @@ public class AccountInfomationChange extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 34, Short.MAX_VALUE))
+                .addGap(0, 28, Short.MAX_VALUE))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +312,7 @@ public class AccountInfomationChange extends javax.swing.JFrame {
 
     }//GEN-LAST:event_updateInfoButtonActionPerformed
 
-    public boolean checkBlankSpace() {
+    private boolean checkBlankSpace() {
         if (usernameTextField.getText().equals("")
                 || oldPasswordField.getPassword().equals("")
                 || fullNameTextField.getText().equals("")
@@ -334,26 +326,25 @@ public class AccountInfomationChange extends javax.swing.JFrame {
     private MainMenu menu;
     private Account acc;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fullNameLabel;
     private UIcomponent.RoundJTextField fullNameTextField;
-    private javax.swing.JLabel imageAvatar;
+    private javax.swing.JLabel genderLabel;
+    private javax.swing.JLabel imageAvatarLabel;
     private javax.swing.JComboBox<String> jGenderCombo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private UIcomponent.RoundJTextPassword newPasswordField;
+    private javax.swing.JLabel newPasswordLabel;
     private UIcomponent.RoundJTextPassword oldPasswordField;
+    private javax.swing.JLabel oldPasswordLabel;
+    private javax.swing.JLabel studentIDLabel;
     private UIcomponent.RoundJTextField studentIdTextField;
+    private javax.swing.JLabel titleLabel;
     private javax.swing.JButton updateInfoButton;
+    private javax.swing.JLabel userNameLabel;
     private UIcomponent.RoundJTextField usernameTextField;
+    private javax.swing.JLabel yearAttendLabel;
     private UIcomponent.RoundJTextField yearAttendTextField;
     // End of variables declaration//GEN-END:variables
 }

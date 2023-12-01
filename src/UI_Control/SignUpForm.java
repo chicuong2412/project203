@@ -29,21 +29,21 @@ public class SignUpForm extends javax.swing.JFrame {
         AllPanel = new javax.swing.JPanel();
         InfoFillPanel = new javax.swing.JPanel();
         fullNameTextField = new UIcomponent.RoundJTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        fullnameLabel = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel();
         usernameTextField = new UIcomponent.RoundJTextField();
         passwordPasswordField = new UIcomponent.RoundJTextPassword();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        signUp = new javax.swing.JLabel();
+        passwordLabel = new javax.swing.JLabel();
+        yearAttendLabel = new javax.swing.JLabel();
+        signupLabel = new javax.swing.JLabel();
         studentIDTextField = new UIcomponent.RoundJTextField();
-        jLabel7 = new javax.swing.JLabel();
+        genderLabel = new javax.swing.JLabel();
         jGenderCombo = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
+        studentIDLabel = new javax.swing.JLabel();
         yearAttendTextField = new UIcomponent.RoundJTextField();
         SubTitleLable = new javax.swing.JLabel();
         TitleLabel = new javax.swing.JLabel();
-        imageAvatar = new javax.swing.JLabel();
+        imageAvatarLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sign up");
@@ -53,34 +53,34 @@ public class SignUpForm extends javax.swing.JFrame {
 
         InfoFillPanel.setBackground(new java.awt.Color(2, 30, 68));
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 239, 219));
-        jLabel3.setText("Full name");
+        fullnameLabel.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        fullnameLabel.setForeground(new java.awt.Color(255, 239, 219));
+        fullnameLabel.setText("Full name");
 
-        jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 239, 219));
-        jLabel4.setText("Username");
+        usernameLabel.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        usernameLabel.setForeground(new java.awt.Color(255, 239, 219));
+        usernameLabel.setText("Username");
 
-        jLabel5.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 239, 219));
-        jLabel5.setText("Password");
+        passwordLabel.setFont(new java.awt.Font("Bodoni MT", 0, 18)); // NOI18N
+        passwordLabel.setForeground(new java.awt.Color(255, 239, 219));
+        passwordLabel.setText("Password");
 
-        jLabel6.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 239, 219));
-        jLabel6.setText("Year attend");
+        yearAttendLabel.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        yearAttendLabel.setForeground(new java.awt.Color(255, 239, 219));
+        yearAttendLabel.setText("Year attend");
 
-        signUp.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        signUp.setForeground(new java.awt.Color(255, 239, 219));
-        signUp.setText("Sign up");
-        signUp.addMouseListener(new java.awt.event.MouseAdapter() {
+        signupLabel.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        signupLabel.setForeground(new java.awt.Color(255, 239, 219));
+        signupLabel.setText("Sign up");
+        signupLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signUpMouseClicked(evt);
+                signupLabelMouseClicked(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 239, 219));
-        jLabel7.setText("Gender");
+        genderLabel.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        genderLabel.setForeground(new java.awt.Color(255, 239, 219));
+        genderLabel.setText("Gender");
 
         jGenderCombo.setForeground(new java.awt.Color(2, 30, 68));
         jGenderCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
@@ -90,9 +90,9 @@ public class SignUpForm extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 239, 219));
-        jLabel8.setText("Student ID");
+        studentIDLabel.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        studentIDLabel.setForeground(new java.awt.Color(255, 239, 219));
+        studentIDLabel.setText("Student ID");
 
         SubTitleLable.setBackground(new java.awt.Color(255, 255, 255));
         SubTitleLable.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
@@ -108,26 +108,26 @@ public class SignUpForm extends javax.swing.JFrame {
                 .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(InfoFillPanelLayout.createSequentialGroup()
                         .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(signupLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(InfoFillPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel6)
+                                    .addComponent(yearAttendLabel)
                                     .addGap(18, 18, 18)
                                     .addComponent(yearAttendTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(30, 30, 30)
-                                    .addComponent(jLabel7)
+                                    .addComponent(genderLabel)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(jGenderCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, InfoFillPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel8)
+                                    .addComponent(studentIDLabel)
                                     .addGap(24, 24, 24)
                                     .addComponent(studentIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InfoFillPanelLayout.createSequentialGroup()
                         .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5))
+                            .addComponent(fullnameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(usernameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(passwordLabel))
                         .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(InfoFillPanelLayout.createSequentialGroup()
                                 .addGap(26, 26, 26)
@@ -146,28 +146,28 @@ public class SignUpForm extends javax.swing.JFrame {
                 .addComponent(SubTitleLable)
                 .addGap(24, 24, 24)
                 .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(fullnameLabel)
                     .addComponent(fullNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(usernameLabel)
                     .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(passwordLabel))
                 .addGap(20, 20, 20)
                 .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(yearAttendLabel)
                     .addComponent(yearAttendTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
+                    .addComponent(genderLabel)
                     .addComponent(jGenderCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(InfoFillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
+                    .addComponent(studentIDLabel)
                     .addComponent(studentIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(signUp)
+                .addComponent(signupLabel)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -175,7 +175,7 @@ public class SignUpForm extends javax.swing.JFrame {
         TitleLabel.setForeground(new java.awt.Color(255, 239, 219));
         TitleLabel.setText("Wellcome");
 
-        imageAvatar.setText("jLabel1");
+        imageAvatarLabel.setText("jLabel1");
 
         javax.swing.GroupLayout AllPanelLayout = new javax.swing.GroupLayout(AllPanel);
         AllPanel.setLayout(AllPanelLayout);
@@ -189,7 +189,7 @@ public class SignUpForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(InfoFillPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(imageAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imageAvatarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
         AllPanelLayout.setVerticalGroup(
@@ -204,7 +204,7 @@ public class SignUpForm extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(AllPanelLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
-                        .addComponent(imageAvatar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(imageAvatarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -213,15 +213,15 @@ public class SignUpForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void avatarGender() {
+    private void avatarGender() {
         if (jGenderCombo.getSelectedIndex() == 0) {
-            imageAvatar.setIcon(new IconSize_Services("male1.png", imageAvatar).getIcon());
+            imageAvatarLabel.setIcon(new IconSize_Services("male1.png", imageAvatarLabel).getIconAsLabelSize());
         } else {
-            imageAvatar.setIcon(new IconSize_Services("female.png", imageAvatar).getIcon());
+            imageAvatarLabel.setIcon(new IconSize_Services("female.png", imageAvatarLabel).getIconAsLabelSize());
         }
     }
 
-    private void signUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseClicked
+    private void signupLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signupLabelMouseClicked
 
         if (checkBlankSpace()) {
             String usernameText = this.usernameTextField.getText();
@@ -262,13 +262,13 @@ public class SignUpForm extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE,
                     new ImageIcon(GetImage.class.getResource("cancel.png")));
         }
-    }//GEN-LAST:event_signUpMouseClicked
+    }//GEN-LAST:event_signupLabelMouseClicked
 
     private void jGenderComboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jGenderComboItemStateChanged
         avatarGender();
     }//GEN-LAST:event_jGenderComboItemStateChanged
 
-    public boolean checkBlankSpace() {
+    private boolean checkBlankSpace() {
         if (usernameTextField.getText().equals("")
                 || String.valueOf(passwordPasswordField.getPassword()).equals("")
                 || fullNameTextField.getText().equals("")
@@ -289,18 +289,18 @@ public class SignUpForm extends javax.swing.JFrame {
     private javax.swing.JLabel SubTitleLable;
     private javax.swing.JLabel TitleLabel;
     private UIcomponent.RoundJTextField fullNameTextField;
-    private javax.swing.JLabel imageAvatar;
+    private javax.swing.JLabel fullnameLabel;
+    private javax.swing.JLabel genderLabel;
+    private javax.swing.JLabel imageAvatarLabel;
     private javax.swing.JComboBox<String> jGenderCombo;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel passwordLabel;
     private UIcomponent.RoundJTextPassword passwordPasswordField;
-    private javax.swing.JLabel signUp;
+    private javax.swing.JLabel signupLabel;
+    private javax.swing.JLabel studentIDLabel;
     private UIcomponent.RoundJTextField studentIDTextField;
+    private javax.swing.JLabel usernameLabel;
     private UIcomponent.RoundJTextField usernameTextField;
+    private javax.swing.JLabel yearAttendLabel;
     private UIcomponent.RoundJTextField yearAttendTextField;
     // End of variables declaration//GEN-END:variables
 }
