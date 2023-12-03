@@ -4,7 +4,7 @@ import enity.Course;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import static services.CourseServices.getPrerequisitesString;
-import static services.CourseServices.toArrayList;
+import static services.CourseServices.toArrayListObject;
 
 
 public class TableAllInformation {
@@ -41,7 +41,7 @@ public class TableAllInformation {
     }
 
     private String[] createRow(Course each) {
-        Object[] rowInfo = toArrayList(each).toArray();
+        Object[] rowInfo = toArrayListObject(each).toArray();
         rowInfo[4] = !String.valueOf(rowInfo[6]).equalsIgnoreCase("true")? "None":rowInfo[4];
         return new String[]{String.valueOf(rowInfo[0]), 
             String.valueOf(rowInfo[1]), 

@@ -36,7 +36,7 @@ public class FileServices {
             int k = 1;
             for (Course each : courses) {
                 row = data.createRow(k);
-                dataStore = CourseServices.toArrayList(each);
+                dataStore = CourseServices.toArrayListObject(each);
                 cell = row.createCell(0);
                 cell.setCellValue(String.valueOf(dataStore.get(0)));
                 cell = row.createCell(1);

@@ -7,7 +7,7 @@ import java.util.Comparator;
 
 public class CourseServices{
 
-    public static ArrayList<Object> toArrayList(Course course) {
+    public static ArrayList<Object> toArrayListObject(Course course) {
         ArrayList<Object> tempt = new ArrayList<>();
         tempt.add(course.getID());
         tempt.add(course.getName());
