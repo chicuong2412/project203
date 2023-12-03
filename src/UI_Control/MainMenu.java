@@ -39,8 +39,8 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         imageLabel = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
-        openAvailableUI = new javax.swing.JButton();
-        openProgressMenu = new javax.swing.JButton();
+        openAvailableUIButton = new javax.swing.JButton();
+        openProgressMenuButton = new javax.swing.JButton();
         saveInfoButton = new javax.swing.JButton();
         openMenubarBt = new javax.swing.JButton();
 
@@ -156,23 +156,23 @@ public class MainMenu extends javax.swing.JFrame {
         titleLabel.setText("Welcome to Course Self-Management");
         jPanel1.add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 470, -1));
 
-        openAvailableUI.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        openAvailableUI.setText("Available Courses");
-        openAvailableUI.addActionListener(new java.awt.event.ActionListener() {
+        openAvailableUIButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        openAvailableUIButton.setText("Available Courses");
+        openAvailableUIButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openAvailableUIActionPerformed(evt);
+                openAvailableUIButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(openAvailableUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 240, 50));
+        jPanel1.add(openAvailableUIButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 240, 50));
 
-        openProgressMenu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        openProgressMenu.setText("Progress Menu");
-        openProgressMenu.addActionListener(new java.awt.event.ActionListener() {
+        openProgressMenuButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        openProgressMenuButton.setText("Progress Menu");
+        openProgressMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openProgressMenuActionPerformed(evt);
+                openProgressMenuButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(openProgressMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 190, 40));
+        jPanel1.add(openProgressMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 190, 40));
 
         saveInfoButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         saveInfoButton.setText("Save Change");
@@ -226,13 +226,13 @@ public class MainMenu extends javax.swing.JFrame {
         new AccountInformation(this.acc).setVisible(true);
     }//GEN-LAST:event_profileAccountLableMouseClicked
 
-    private void openAvailableUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAvailableUIActionPerformed
+    private void openAvailableUIButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAvailableUIButtonActionPerformed
         new CoursesGeneral(this).setVisible(true);
-    }//GEN-LAST:event_openAvailableUIActionPerformed
+    }//GEN-LAST:event_openAvailableUIButtonActionPerformed
 
-    private void openProgressMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openProgressMenuActionPerformed
+    private void openProgressMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openProgressMenuButtonActionPerformed
         new CourseUpdate(this).setVisible(true);
-    }//GEN-LAST:event_openProgressMenuActionPerformed
+    }//GEN-LAST:event_openProgressMenuButtonActionPerformed
 
     private void saveInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfoButtonActionPerformed
          FileServices.writeFileExcelFromAccount(username, this.UserCourses.getArrayCourses());
@@ -295,9 +295,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel logoutLable;
     private javax.swing.JPanel menubar;
-    private javax.swing.JButton openAvailableUI;
+    private javax.swing.JButton openAvailableUIButton;
     private javax.swing.JButton openMenubarBt;
-    private javax.swing.JButton openProgressMenu;
+    private javax.swing.JButton openProgressMenuButton;
     private javax.swing.JLabel profileAccountLable;
     private javax.swing.JButton saveInfoButton;
     private javax.swing.JLabel titleLabel;
