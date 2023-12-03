@@ -5,7 +5,7 @@ import enity.Course;
 import java.util.ArrayList;
 
 public class UserCourses extends AllUserProgress {
-    ArrayList<Course> courses;
+    private ArrayList<Course> courses;
 
     public ArrayList<Course> getArrayCourses() {
         return courses;

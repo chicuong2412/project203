@@ -7,7 +7,7 @@ import java.util.Comparator;
 
 public class CourseServices{
 
-    public static ArrayList<Object> toArrayList(Course course) {
+    public static ArrayList<Object> toArrayListObject(Course course) {
         ArrayList<Object> tempt = new ArrayList<>();
         tempt.add(course.getID());
         tempt.add(course.getName());
@@ -42,7 +42,9 @@ public class CourseServices{
         ArrayList<Course> list = new ArrayList<>();
         for (Course each: courses){
             boolean flag = checkPrerequisites(each, courses);
-            if(flag || (!each.isStatus() &&each.getPrerequisites().get(0).equalsIgnoreCase("none"))){
+            if((flag && !each.isStatus()) 
+                    || (!each.isStatus() && 
+                    each.getPrerequisites().get(0).equalsIgnoreCase("none"))){
                 list.add(each);
             }
         }
@@ -67,7 +69,7 @@ public class CourseServices{
         return score;
     }
     
-    public static ArrayList<String> getListByStatus(ArrayList<Course> courses, boolean status){
+    public static ArrayList<String> getListByStatus(ArrayList<Course> courses, boolean status){//List Completed or Incompleted Courses in String
         ArrayList<String> coursesCompleted = new ArrayList<>();
         for (Course each : courses){
             if (each.isStatus() == status){
@@ -88,7 +90,7 @@ public class CourseServices{
     }
     
     
-    public static boolean checkPrerequisites(Course course, ArrayList<Course> courses){
+    public static boolean checkPrerequisites(Course course, ArrayList<Course> courses){//check if the prerequisites are completed
         ArrayList<String> coursesCompleted = getListByStatus(courses, true);
         for (int i = 0; i < course.getPrerequisites().size();i++){
                 if ((!coursesCompleted.contains(course.getPrerequisites().get(i)) || course.isStatus()) 

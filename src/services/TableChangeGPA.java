@@ -39,7 +39,7 @@ public class TableChangeGPA {
         return this.model;
     }
 
-    public String[] createRow(Course each) {
+    private String[] createRow(Course each) {
         Object[] rowInfo = toArrayStatusAndGPA(each).toArray();
         return new String[]{String.valueOf(rowInfo[0]), String.valueOf(rowInfo[1]), String.valueOf(rowInfo[2]), String.valueOf(rowInfo[3])};
     }

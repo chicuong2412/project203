@@ -1,6 +1,9 @@
 package UI_Control;
 
 import enity.Course;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import picture.GetImage;
 import static services.CourseServices.getPrerequisitesString;
 
 /**
@@ -17,6 +20,9 @@ public class ShowCourseInfo extends javax.swing.JFrame {
         this.course = course;
         this.setLocationRelativeTo(null);
         showInfo();
+        ImageIcon icon = new ImageIcon(GetImage.class.getResource("courseinfo_icon.png"));
+        Image image = icon.getImage();
+        this.setIconImage(image);
     }
 
     /**
@@ -29,80 +35,81 @@ public class ShowCourseInfo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         roundIDTextField = new UIcomponent.RoundJTextField();
-        jLabel10 = new javax.swing.JLabel();
+        idLabel = new javax.swing.JLabel();
         roundNameTextField = new UIcomponent.RoundJTextField();
-        jLabel11 = new javax.swing.JLabel();
+        referenceLabel = new javax.swing.JLabel();
         roundCreditTextField = new UIcomponent.RoundJTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea = new javax.swing.JTextArea();
+        creditLabel = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
+        referenceTextAreaScrollPane = new javax.swing.JScrollPane();
+        referenceTextArea = new javax.swing.JTextArea();
 
         roundStatusTextField = new UIcomponent.RoundJTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        statusLabel = new javax.swing.JLabel();
+        prerequisitesLabel = new javax.swing.JLabel();
         roundPrerequisitesTextField = new UIcomponent.RoundJTextField();
-        jLabel16 = new javax.swing.JLabel();
+        gpaLabel = new javax.swing.JLabel();
         roundGPATextField = new UIcomponent.RoundJTextField();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        borderProgressBar = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Course Information");
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel9.setFont(new java.awt.Font("Britannic Bold", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel9.setText("Course Progress & Information");
+        titleLabel.setFont(new java.awt.Font("Britannic Bold", 1, 24)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(51, 51, 51));
+        titleLabel.setText("Course Progress & Information");
 
         jPanel3.setBackground(new java.awt.Color(2, 30, 68));
 
         roundIDTextField.setEditable(false);
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 222, 173));
-        jLabel10.setText("ID");
+        idLabel.setBackground(new java.awt.Color(255, 255, 255));
+        idLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        idLabel.setForeground(new java.awt.Color(255, 222, 173));
+        idLabel.setText("ID");
 
         roundNameTextField.setEditable(false);
 
-        jLabel11.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 222, 173));
-        jLabel11.setText("Reference");
+        referenceLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        referenceLabel.setForeground(new java.awt.Color(255, 222, 173));
+        referenceLabel.setText("Reference");
 
         roundCreditTextField.setEditable(false);
 
-        jLabel12.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 222, 173));
-        jLabel12.setText("Credit");
+        creditLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        creditLabel.setForeground(new java.awt.Color(255, 222, 173));
+        creditLabel.setText("Credit");
 
-        jLabel13.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 222, 173));
-        jLabel13.setText("Name");
+        nameLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        nameLabel.setForeground(new java.awt.Color(255, 222, 173));
+        nameLabel.setText("Name");
 
-        jTextArea.setEditable(false);
-        jTextArea.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea.setColumns(20);
-        jTextArea.setRows(5);
-        jScrollPane2.setViewportView(jTextArea);
+        referenceTextArea.setEditable(false);
+        referenceTextArea.setBackground(new java.awt.Color(255, 255, 255));
+        referenceTextArea.setColumns(20);
+        referenceTextArea.setRows(5);
+        referenceTextAreaScrollPane.setViewportView(referenceTextArea);
 
         roundStatusTextField.setEditable(false);
 
-        jLabel14.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 222, 173));
-        jLabel14.setText("Status");
+        statusLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        statusLabel.setForeground(new java.awt.Color(255, 222, 173));
+        statusLabel.setText("Status");
 
-        jLabel15.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 222, 173));
-        jLabel15.setText("Prerequisites");
+        prerequisitesLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        prerequisitesLabel.setForeground(new java.awt.Color(255, 222, 173));
+        prerequisitesLabel.setText("Prerequisites");
 
         roundPrerequisitesTextField.setEditable(false);
 
-        jLabel16.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 222, 173));
-        jLabel16.setText("GPA");
+        gpaLabel.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        gpaLabel.setForeground(new java.awt.Color(255, 222, 173));
+        gpaLabel.setText("GPA");
 
         roundGPATextField.setEditable(false);
 
@@ -115,18 +122,18 @@ public class ShowCourseInfo extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel10))
+                            .addComponent(nameLabel)
+                            .addComponent(idLabel))
                         .addGap(34, 34, 34)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(roundIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(217, 217, 217)
-                                .addComponent(jLabel12))
+                                .addComponent(creditLabel))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(roundNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(47, 47, 47)
-                                .addComponent(jLabel14)))
+                                .addComponent(statusLabel)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(roundCreditTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,49 +142,49 @@ public class ShowCourseInfo extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel15)
+                                .addComponent(prerequisitesLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(roundPrerequisitesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
-                                .addComponent(jLabel16)
+                                .addComponent(gpaLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(roundGPATextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
+                                .addComponent(referenceLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(referenceTextAreaScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(45, 45, 45))
-            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(borderProgressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(borderProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(roundIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel12)
+                    .addComponent(idLabel)
+                    .addComponent(creditLabel)
                     .addComponent(roundCreditTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(roundNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel14)
+                    .addComponent(nameLabel)
+                    .addComponent(statusLabel)
                     .addComponent(roundStatusTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addComponent(jLabel11))
+                        .addComponent(referenceLabel))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(referenceTextAreaScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(roundPrerequisitesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16)
+                    .addComponent(prerequisitesLabel)
+                    .addComponent(gpaLabel)
                     .addComponent(roundGPATextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
@@ -189,14 +196,14 @@ public class ShowCourseInfo extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9)
+                .addComponent(titleLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -215,7 +222,7 @@ public class ShowCourseInfo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void showInfo() {
+    private void showInfo() {
         roundIDTextField.setText(course.getID());
         roundNameTextField.setText(course.getName());
         roundPrerequisitesTextField.setText(getPrerequisitesString(course));
@@ -228,31 +235,31 @@ public class ShowCourseInfo extends javax.swing.JFrame {
         for (int i = 0; i < toTextArea.length; i++){
             output.append(toTextArea[i]).append("\n");
         }
-        jTextArea.setText(output.toString());
+        referenceTextArea.setText(output.toString());
     }
     /**
      * @param args the command line arguments
      */
     private Course course;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JProgressBar borderProgressBar;
+    private javax.swing.JLabel creditLabel;
+    private javax.swing.JLabel gpaLabel;
+    private javax.swing.JLabel idLabel;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JLabel prerequisitesLabel;
+    private javax.swing.JLabel referenceLabel;
+    private javax.swing.JTextArea referenceTextArea;
+    private javax.swing.JScrollPane referenceTextAreaScrollPane;
     private UIcomponent.RoundJTextField roundCreditTextField;
     private UIcomponent.RoundJTextField roundGPATextField;
     private UIcomponent.RoundJTextField roundIDTextField;
     private UIcomponent.RoundJTextField roundNameTextField;
     private UIcomponent.RoundJTextField roundPrerequisitesTextField;
     private UIcomponent.RoundJTextField roundStatusTextField;
+    private javax.swing.JLabel statusLabel;
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 }

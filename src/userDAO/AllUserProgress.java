@@ -8,8 +8,8 @@ import java.util.Set;
 import services.FileServices;
 
 
-public class AllUserProgress {// new AllUserProgess()
-    public static HashMap<Account, ArrayList<Course>> data = FileServices.readAllUsersCourses();
+public class AllUserProgress extends FileServices{// new AllUserProgess()
+    public static HashMap<Account, ArrayList<Course>> data = readAllUsersCourses();
     
     
     

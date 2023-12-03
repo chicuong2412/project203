@@ -15,6 +15,10 @@ public class Course implements Serializable{
     private boolean status;
     private ArrayList<String> prerequisites; // CSE102 CSE101
 
+    public Course(){
+        
+    }
+    
     public Course(String ID, 
             String name, 
             int credit,

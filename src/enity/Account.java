@@ -10,7 +10,17 @@ public class Account implements Serializable{
     private int yearAttend;
     private String studentID;
     private boolean gender;
+    private String userID;
 
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    
     public String getStudentID() {
         return studentID;
     }
@@ -56,6 +66,7 @@ public class Account implements Serializable{
         this.yearAttend = yearAttend;
         this.studentID = studentID;
         this.gender = gender;
+        this.userID = "user" + studentID;
     }
  
     public String getUsername() {

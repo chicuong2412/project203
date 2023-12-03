@@ -41,7 +41,7 @@ public class TableAvailable {
         return this.model;
     }
 
-    public String[] createRow(Course each) {
+    private String[] createRow(Course each) {
         Object[] rowInfo = toArrayStatus(each).toArray();
         return new String[]{String.valueOf(rowInfo[0]),
             String.valueOf(rowInfo[1]),

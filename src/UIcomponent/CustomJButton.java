@@ -138,7 +138,7 @@ public class CustomJButton extends JButton{
 
     private Font font;
     private int borderSize;
-    private boolean over;
+    private boolean over; //Is cover by mouse or not
     private Color color;
     private Color colorOver;
     private Color colorClick;
