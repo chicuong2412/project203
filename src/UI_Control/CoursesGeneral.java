@@ -29,18 +29,18 @@ public class CoursesGeneral extends javax.swing.JFrame {
 
         courseGeneralTabbedPane = new javax.swing.JTabbedPane();
         availablePanel = new javax.swing.JPanel();
-        jSearchTextField = new javax.swing.JTextField();
         nameCheckRaidoButton = new javax.swing.JRadioButton();
         listAvailableSrollPane = new javax.swing.JScrollPane();
         listAvailable = new javax.swing.JTable();
         idCheckRaidoButton = new javax.swing.JRadioButton();
+        jSearchTextField = new UIcomponent.RoundJTextField();
         allCoursePanel = new javax.swing.JPanel();
         nameCheckAllRadioButton = new javax.swing.JRadioButton();
         idCheckAllRadioButton = new javax.swing.JRadioButton();
-        jSearchAllField = new javax.swing.JTextField();
         allCoursesTable = new javax.swing.JScrollPane();
         allTableCourses = new javax.swing.JTable();
-        backButton = new javax.swing.JButton();
+        jSearchAllField = new UIcomponent.RoundJTextField();
+        backButton = new UIcomponent.CustomJButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("List of courses you can sign up for");
@@ -50,18 +50,6 @@ public class CoursesGeneral extends javax.swing.JFrame {
         courseGeneralTabbedPane.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         availablePanel.setBackground(new java.awt.Color(39, 64, 139));
-
-        jSearchTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jSearchTextFieldKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jSearchTextFieldKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jSearchTextFieldKeyTyped(evt);
-            }
-        });
 
         nameCheckRaidoButton.setBackground(new java.awt.Color(39, 64, 139));
         nameCheckRaidoButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -113,6 +101,19 @@ public class CoursesGeneral extends javax.swing.JFrame {
             }
         });
 
+        jSearchTextField.setForeground(new java.awt.Color(0, 0, 0));
+        jSearchTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jSearchTextFieldKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jSearchTextFieldKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jSearchTextFieldKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout availablePanelLayout = new javax.swing.GroupLayout(availablePanel);
         availablePanel.setLayout(availablePanelLayout);
         availablePanelLayout.setHorizontalGroup(
@@ -127,8 +128,8 @@ public class CoursesGeneral extends javax.swing.JFrame {
                         .addGroup(availablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(idCheckRaidoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nameCheckRaidoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
-                        .addComponent(jSearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         availablePanelLayout.setVerticalGroup(
@@ -138,13 +139,13 @@ public class CoursesGeneral extends javax.swing.JFrame {
                 .addGroup(availablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(idCheckRaidoButton)
                     .addGroup(availablePanelLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addGroup(availablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(11, 11, 11)
+                        .addGroup(availablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nameCheckRaidoButton)
-                            .addComponent(jSearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jSearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(listAvailableSrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(71, 71, 71))
         );
 
         courseGeneralTabbedPane.addTab("Available Courses", availablePanel);
@@ -168,18 +169,6 @@ public class CoursesGeneral extends javax.swing.JFrame {
         idCheckAllRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idCheckAllRadioButtonActionPerformed(evt);
-            }
-        });
-
-        jSearchAllField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jSearchAllFieldKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jSearchAllFieldKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jSearchAllFieldKeyTyped(evt);
             }
         });
 
@@ -214,6 +203,19 @@ public class CoursesGeneral extends javax.swing.JFrame {
             allTableCourses.getColumnModel().getColumn(6).setMaxWidth(200);
         }
 
+        jSearchAllField.setForeground(new java.awt.Color(0, 0, 0));
+        jSearchAllField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jSearchAllFieldKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jSearchAllFieldKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jSearchAllFieldKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout allCoursePanelLayout = new javax.swing.GroupLayout(allCoursePanel);
         allCoursePanel.setLayout(allCoursePanelLayout);
         allCoursePanelLayout.setHorizontalGroup(
@@ -228,8 +230,8 @@ public class CoursesGeneral extends javax.swing.JFrame {
                         .addGroup(allCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(idCheckAllRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nameCheckAllRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
-                        .addComponent(jSearchAllField, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSearchAllField, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         allCoursePanelLayout.setVerticalGroup(
@@ -239,20 +241,23 @@ public class CoursesGeneral extends javax.swing.JFrame {
                 .addGroup(allCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(idCheckAllRadioButton)
                     .addGroup(allCoursePanelLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addGroup(allCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nameCheckAllRadioButton)
-                            .addComponent(jSearchAllField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(21, 21, 21)
+                        .addComponent(nameCheckAllRadioButton))
+                    .addComponent(jSearchAllField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(allCoursesTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(71, 71, 71))
         );
 
         courseGeneralTabbedPane.addTab("All Courses", allCoursePanel);
 
-        backButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        backButton.setForeground(new java.awt.Color(2, 30, 68));
+        backButton.setForeground(new java.awt.Color(0, 51, 255));
         backButton.setText("Back");
+        backButton.setBorderColor(new java.awt.Color(255, 255, 255));
+        backButton.setColorClick(new java.awt.Color(255, 255, 255));
+        backButton.setColorOver(new java.awt.Color(255, 255, 255));
+        backButton.setFont(new java.awt.Font("sansserrif", 1, 14)); // NOI18N
+        backButton.setRadius(10);
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -264,28 +269,23 @@ public class CoursesGeneral extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(courseGeneralTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(backButton)
+                .addGap(1, 1, 1)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(backButton)
-                .addContainerGap(545, Short.MAX_VALUE))
             .addComponent(courseGeneralTabbedPane)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        this.menu.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_backButtonActionPerformed
 
     private void idCheckRaidoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idCheckRaidoButtonActionPerformed
         if (idCheckRaidoButton.isSelected()) {
@@ -303,18 +303,6 @@ public class CoursesGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_nameCheckRaidoButtonActionPerformed
 
-    private void jSearchTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchTextFieldKeyPressed
-        doSearchStatus();
-    }//GEN-LAST:event_jSearchTextFieldKeyPressed
-
-    private void jSearchTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchTextFieldKeyReleased
-        doSearchStatus();
-    }//GEN-LAST:event_jSearchTextFieldKeyReleased
-
-    private void jSearchTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchTextFieldKeyTyped
-        doSearchStatus();
-    }//GEN-LAST:event_jSearchTextFieldKeyTyped
-
     private void nameCheckAllRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameCheckAllRadioButtonActionPerformed
         if (nameCheckAllRadioButton.isSelected()) {
             idCheckAllRadioButton.setEnabled(false);
@@ -331,18 +319,6 @@ public class CoursesGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_idCheckAllRadioButtonActionPerformed
 
-    private void jSearchAllFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchAllFieldKeyPressed
-        doSearchAll();
-    }//GEN-LAST:event_jSearchAllFieldKeyPressed
-
-    private void jSearchAllFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchAllFieldKeyReleased
-        doSearchAll();
-    }//GEN-LAST:event_jSearchAllFieldKeyReleased
-
-    private void jSearchAllFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchAllFieldKeyTyped
-        doSearchAll();
-    }//GEN-LAST:event_jSearchAllFieldKeyTyped
-
     private void listAvailableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listAvailableMouseClicked
         int row = listAvailable.getSelectedRow();
         new ShowCourseInfo(
@@ -355,7 +331,36 @@ public class CoursesGeneral extends javax.swing.JFrame {
                 this.menu.UserCourses.getCourse(String.valueOf(allTableCourses.getValueAt(row, 0)))).setVisible(true);
     }//GEN-LAST:event_allTableCoursesMouseClicked
 
-    public void getTableAvaiable(String choice, String searchKey) {
+    private void jSearchTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchTextFieldKeyPressed
+        doSearchStatus();
+    }//GEN-LAST:event_jSearchTextFieldKeyPressed
+
+    private void jSearchTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchTextFieldKeyReleased
+        doSearchStatus();
+    }//GEN-LAST:event_jSearchTextFieldKeyReleased
+
+    private void jSearchTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchTextFieldKeyTyped
+        doSearchStatus();
+    }//GEN-LAST:event_jSearchTextFieldKeyTyped
+
+    private void jSearchAllFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchAllFieldKeyPressed
+        doSearchAll();
+    }//GEN-LAST:event_jSearchAllFieldKeyPressed
+
+    private void jSearchAllFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchAllFieldKeyReleased
+        doSearchAll();
+    }//GEN-LAST:event_jSearchAllFieldKeyReleased
+
+    private void jSearchAllFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchAllFieldKeyTyped
+        doSearchAll();
+    }//GEN-LAST:event_jSearchAllFieldKeyTyped
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        this.menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void getTableAvaiable(String choice, String searchKey) {
         listAvailable.setModel(new TableAvailable(this.menu.UserCourses.getArrayCourses(), 
                 searchKey, 
                 choice)
@@ -363,7 +368,7 @@ public class CoursesGeneral extends javax.swing.JFrame {
 
     }
     
-    public void getTableAll(String choice, String searchKey) {
+    private void getTableAll(String choice, String searchKey) {
         allTableCourses.setModel(new TableAllInformation(this.menu.UserCourses.getArrayCourses(), 
                 searchKey, 
                 choice)
@@ -371,7 +376,7 @@ public class CoursesGeneral extends javax.swing.JFrame {
 
     }
     
-    public void doSearchStatus(){
+    private void doSearchStatus(){
         if (idCheckRaidoButton.isSelected()) {
             getTableAvaiable("ID", jSearchTextField.getText());
         } else if (nameCheckRaidoButton.isSelected()) {
@@ -382,7 +387,7 @@ public class CoursesGeneral extends javax.swing.JFrame {
     }
     
     
-    public void doSearchAll(){
+    private void doSearchAll(){
         if (idCheckAllRadioButton.isSelected()) {
             getTableAll("ID", jSearchAllField.getText());
         } else if (nameCheckAllRadioButton.isSelected()) {
@@ -395,18 +400,18 @@ public class CoursesGeneral extends javax.swing.JFrame {
      * @param args the command line arguments
      */
 
-    MainMenu menu;
+    private MainMenu menu;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel allCoursePanel;
     private javax.swing.JScrollPane allCoursesTable;
     private javax.swing.JTable allTableCourses;
     private javax.swing.JPanel availablePanel;
-    private javax.swing.JButton backButton;
+    private UIcomponent.CustomJButton backButton;
     private javax.swing.JTabbedPane courseGeneralTabbedPane;
     private javax.swing.JRadioButton idCheckAllRadioButton;
     private javax.swing.JRadioButton idCheckRaidoButton;
-    private javax.swing.JTextField jSearchAllField;
-    private javax.swing.JTextField jSearchTextField;
+    private UIcomponent.RoundJTextField jSearchAllField;
+    private UIcomponent.RoundJTextField jSearchTextField;
     private javax.swing.JTable listAvailable;
     private javax.swing.JScrollPane listAvailableSrollPane;
     private javax.swing.JRadioButton nameCheckAllRadioButton;

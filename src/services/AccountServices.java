@@ -3,6 +3,7 @@ package services;
 import userDAO.AllUserProgress;
 import static userDAO.AllUserProgress.getListAccounts;
 import enity.Account;
+import enity.Course;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Set;
@@ -55,5 +56,15 @@ public class AccountServices {
             }
         }
         return false;
+    }
+    
+    public static double getAccountGPA(ArrayList<Course> courses){
+        double GPA = 0;
+        int credit = 0;
+        for (Course each: courses){
+            GPA += each.getGPA()*each.getCredit();
+            credit += each.getCredit();
+        }
+        return (double) GPA/credit;
     }
 }

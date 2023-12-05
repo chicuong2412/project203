@@ -93,6 +93,11 @@ public class SignUpForm extends javax.swing.JFrame {
         backLabel.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
         backLabel.setForeground(new java.awt.Color(255, 239, 219));
         backLabel.setText("Back");
+        backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backLabelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout InfoFillPanelLayout = new javax.swing.GroupLayout(InfoFillPanel);
         InfoFillPanel.setLayout(InfoFillPanelLayout);
@@ -273,6 +278,11 @@ public class SignUpForm extends javax.swing.JFrame {
     private void jGenderComboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jGenderComboItemStateChanged
         avatarGender();
     }//GEN-LAST:event_jGenderComboItemStateChanged
+
+    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
+        new LoginFrame("").setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backLabelMouseClicked
 
     private boolean checkBlankSpace() {
         if (usernameTextField.getText().equals("")
