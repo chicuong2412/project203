@@ -8,10 +8,11 @@ import java.util.Set;
 import services.FileServices;
 
 
-public class AllUserProgress extends FileServices{// new AllUserProgess()
+public abstract class AllUserProgress extends FileServices{// new AllUserProgess()
     public static HashMap<Account, ArrayList<Course>> data = readAllUsersCourses();
     
-    
+    public abstract Account getAcc();
+    public abstract void setAcc(Account acc);
     
     public static ArrayList<Account> getListAccounts(){
         Set<Account> key = data.keySet();

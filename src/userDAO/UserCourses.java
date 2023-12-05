@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class UserCourses extends AllUserProgress {
     private ArrayList<Course> courses;
-
+    private Account acc;
     public ArrayList<Course> getArrayCourses() {
         return courses;
     }
@@ -16,6 +16,7 @@ public class UserCourses extends AllUserProgress {
     }
     public UserCourses(Account acc){
         this.courses = getListCourses(acc);
+        this.acc = acc;
     }
     
     public Course getCourse(String id){
@@ -34,5 +35,15 @@ public class UserCourses extends AllUserProgress {
             }
         }
         
+    }
+
+    @Override
+    public Account getAcc() {
+        return acc;
+    }
+
+    @Override
+    public void setAcc(Account acc) {
+        this.acc = acc;
     }
 }
