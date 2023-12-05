@@ -74,11 +74,6 @@ public class AccountInformation extends javax.swing.JFrame {
         fullnameLabel.setText("Full name");
 
         fullNameTextField.setEditable(false);
-        fullNameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fullNameTextFieldActionPerformed(evt);
-            }
-        });
 
         usernameLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         usernameLabel.setForeground(new java.awt.Color(221, 196, 136));
@@ -87,11 +82,6 @@ public class AccountInformation extends javax.swing.JFrame {
         usernameTextField.setEditable(false);
 
         genderTextField.setEditable(false);
-        genderTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genderTextFieldActionPerformed(evt);
-            }
-        });
 
         genderLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         genderLabel.setForeground(new java.awt.Color(221, 196, 136));
@@ -136,11 +126,6 @@ public class AccountInformation extends javax.swing.JFrame {
 
         GPATextField.setEditable(false);
         GPATextField.setForeground(new java.awt.Color(0, 0, 0));
-        GPATextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GPATextFieldActionPerformed(evt);
-            }
-        });
 
         GPAlabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         GPAlabel.setForeground(new java.awt.Color(221, 196, 136));
@@ -243,18 +228,6 @@ public class AccountInformation extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void genderTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_genderTextFieldActionPerformed
-
-    private void fullNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fullNameTextFieldActionPerformed
-
-    private void GPATextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPATextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GPATextFieldActionPerformed
 
     private Account acc;
     // Variables declaration - do not modify//GEN-BEGIN:variables
