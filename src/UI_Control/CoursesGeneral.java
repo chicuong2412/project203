@@ -254,6 +254,7 @@ public class CoursesGeneral extends javax.swing.JFrame {
         backButton.setForeground(new java.awt.Color(0, 51, 255));
         backButton.setText("Back");
         backButton.setBorderColor(new java.awt.Color(255, 255, 255));
+        backButton.setBorderPainted(false);
         backButton.setColorClick(new java.awt.Color(255, 255, 255));
         backButton.setColorOver(new java.awt.Color(255, 255, 255));
         backButton.setFont(new java.awt.Font("sansserrif", 1, 14)); // NOI18N
