@@ -1,4 +1,4 @@
-# project203
+# project203: Courses Self-Management
 This version has been added: changing information
-We has changed reading accounts by byte into file excel, which could improve updating the information more specificly.
-Some UI has been upgraded, but main menu is being on update, which will soon complete in a few days.
+We have changed reading accounts by byte into Excel file, which could improve updating the information more specifically.
+Some UI has been upgraded, but the main menu is being updated, which will soon be completed in a few days.
