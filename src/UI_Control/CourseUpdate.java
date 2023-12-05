@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import picture.GetImage;
 import static services.CourseServices.checkPrerequisites;
 import static services.CourseServices.getListByStatusCourses;
+import services.IconSize_Services;
 import services.TableChangeGPA;
 import services.TableCoursesStatus;
 
@@ -25,6 +26,8 @@ public class CourseUpdate extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon(GetImage.class.getResource("courseupdate_icon.png"));
         Image image = icon.getImage();
         this.setIconImage(image);
+        this.infoLabel.setIcon(new IconSize_Services("info.png", infoLabel).getIconAsLabelSize());
+        this.infoGPAlabel.setIcon(new IconSize_Services("info.png", infoLabel).getIconAsLabelSize());
     }
 
     private void getTableComplete(String choice, String searchKey) {
@@ -61,6 +64,7 @@ public class CourseUpdate extends javax.swing.JFrame {
         listIncompleteCourses = new javax.swing.JTable();
         idChangeStatusRadioButton = new javax.swing.JRadioButton();
         jSearchKeyStatusChange = new UIcomponent.RoundJTextField();
+        infoLabel = new javax.swing.JLabel();
         changeGPAPanel = new javax.swing.JPanel();
         gpaTableScrollPane = new javax.swing.JScrollPane();
         gpaTable = new javax.swing.JTable();
@@ -76,6 +80,8 @@ public class CourseUpdate extends javax.swing.JFrame {
         nameChangeGPARadioButton = new javax.swing.JRadioButton();
         jChangeGPAButton = new javax.swing.JButton();
         jSearchKeyGPA = new UIcomponent.RoundJTextField();
+        infoGPAlabel = new javax.swing.JLabel();
+        RefreshBt = new UIcomponent.CustomJButton();
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -159,6 +165,13 @@ public class CourseUpdate extends javax.swing.JFrame {
             }
         });
 
+        infoLabel.setText("info");
+        infoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                infoLabelMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout changeCoursesStatusPanelLayout = new javax.swing.GroupLayout(changeCoursesStatusPanel);
         changeCoursesStatusPanel.setLayout(changeCoursesStatusPanelLayout);
         changeCoursesStatusPanelLayout.setHorizontalGroup(
@@ -167,17 +180,19 @@ public class CourseUpdate extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(changeCoursesStatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(changeCoursesStatusPanelLayout.createSequentialGroup()
+                        .addComponent(listInompleteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addComponent(listCompleteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))
+                    .addGroup(changeCoursesStatusPanelLayout.createSequentialGroup()
                         .addGroup(changeCoursesStatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nameChangeStatusRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(idChangeStatusRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSearchKeyStatusChange, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(changeCoursesStatusPanelLayout.createSequentialGroup()
-                        .addComponent(listInompleteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(listCompleteScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15))))
+                        .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(158, 158, 158))))
         );
         changeCoursesStatusPanelLayout.setVerticalGroup(
             changeCoursesStatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +204,9 @@ public class CourseUpdate extends javax.swing.JFrame {
                     .addGroup(changeCoursesStatusPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(changeCoursesStatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSearchKeyStatusChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(changeCoursesStatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jSearchKeyStatusChange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(idChangeStatusRadioButton))
                         .addGap(0, 4, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
@@ -288,6 +305,23 @@ public class CourseUpdate extends javax.swing.JFrame {
             }
         });
 
+        infoGPAlabel.setText("info");
+        infoGPAlabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                infoGPAlabelMouseClicked(evt);
+            }
+        });
+
+        RefreshBt.setForeground(new java.awt.Color(0, 0, 0));
+        RefreshBt.setText("Refresh");
+        RefreshBt.setFont(new java.awt.Font("sansserrif", 1, 14)); // NOI18N
+        RefreshBt.setRadius(10);
+        RefreshBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshBtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout changeGPAPanelLayout = new javax.swing.GroupLayout(changeGPAPanel);
         changeGPAPanel.setLayout(changeGPAPanelLayout);
         changeGPAPanelLayout.setHorizontalGroup(
@@ -295,13 +329,6 @@ public class CourseUpdate extends javax.swing.JFrame {
             .addGroup(changeGPAPanelLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(changeGPAPanelLayout.createSequentialGroup()
-                        .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(idChangeGPARadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameChangeGPARadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSearchKeyGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
                     .addGroup(changeGPAPanelLayout.createSequentialGroup()
                         .addComponent(gpaTableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,18 +351,36 @@ public class CourseUpdate extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, changeGPAPanelLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
                                 .addComponent(jChangeGPAButton)
-                                .addGap(134, 134, 134))))))
+                                .addGap(134, 134, 134))))
+                    .addGroup(changeGPAPanelLayout.createSequentialGroup()
+                        .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(idChangeGPARadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameChangeGPARadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSearchKeyGPA, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(infoGPAlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(RefreshBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))))
         );
         changeGPAPanelLayout.setVerticalGroup(
             changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(changeGPAPanelLayout.createSequentialGroup()
-                .addGap(7, 7, 7)
                 .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(idChangeGPARadioButton)
                     .addGroup(changeGPAPanelLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(nameChangeGPARadioButton))
-                    .addComponent(jSearchKeyGPA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(7, 7, 7)
+                        .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idChangeGPARadioButton)
+                            .addGroup(changeGPAPanelLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(nameChangeGPARadioButton))
+                            .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jSearchKeyGPA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(infoGPAlabel))))
+                    .addGroup(changeGPAPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(RefreshBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(changeGPAPanelLayout.createSequentialGroup()
@@ -597,8 +642,23 @@ public class CourseUpdate extends javax.swing.JFrame {
         doSearchGPA();
     }//GEN-LAST:event_jSearchKeyGPAKeyTyped
 
+    private void infoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoLabelMouseClicked
+        JOptionPane.showMessageDialog(this, "Click on the course which you have completed or not completed to change it status", 
+                "Instructions", JOptionPane.OK_OPTION, new ImageIcon(GetImage.class.getResource("info.png")));
+    }//GEN-LAST:event_infoLabelMouseClicked
+
+    private void infoGPAlabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoGPAlabelMouseClicked
+        JOptionPane.showMessageDialog(this, "Click on the course which you have completed to update GPA", 
+                "Instructions", JOptionPane.OK_OPTION, new ImageIcon(GetImage.class.getResource("info.png")));
+    }//GEN-LAST:event_infoGPAlabelMouseClicked
+
+    private void RefreshBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshBtActionPerformed
+        getTableGPA("", "");
+    }//GEN-LAST:event_RefreshBtActionPerformed
+
     private MainMenu menu;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private UIcomponent.CustomJButton RefreshBt;
     private javax.swing.JButton backButton;
     private javax.swing.JPanel changeCoursesStatusPanel;
     private javax.swing.JPanel changeGPAPanel;
@@ -611,6 +671,8 @@ public class CourseUpdate extends javax.swing.JFrame {
     private javax.swing.JRadioButton idChangeStatusRadioButton;
     private javax.swing.JLabel idLabel;
     private javax.swing.JTextField idTextField;
+    private javax.swing.JLabel infoGPAlabel;
+    private javax.swing.JLabel infoLabel;
     private javax.swing.JButton jChangeGPAButton;
     private javax.swing.JPanel jPanel3;
     private UIcomponent.RoundJTextField jSearchKeyGPA;

@@ -4,7 +4,10 @@ import enity.Account;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import picture.GetImage;
+import static services.AccountServices.getAccountGPA;
+import static services.CourseServices.getListByStatusCourses;
 import services.IconSize_Services;
+import static userDAO.AllUserProgress.getListCourses;
 
 public class AccountInformation extends javax.swing.JFrame {
 
@@ -29,6 +32,10 @@ public class AccountInformation extends javax.swing.JFrame {
         studentIdTextField.setText(acc.getStudentID());
         genderTextField.setText((acc.isGender() == true) ? "Male" : "Female");
         yearAttendTextField.setText(String.valueOf(acc.getYearAttend()));
+        double GPA = getAccountGPA(
+                getListByStatusCourses(
+                        getListCourses(this.acc), true));
+        GPATextField.setText(String.format("%.2f", GPA));
     }
 
     @SuppressWarnings("unchecked")
@@ -50,6 +57,8 @@ public class AccountInformation extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
         imageAvatarLabel = new javax.swing.JLabel();
+        GPATextField = new UIcomponent.RoundJTextField();
+        GPAlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Account Information");
@@ -124,6 +133,18 @@ public class AccountInformation extends javax.swing.JFrame {
 
         imageAvatarLabel.setText("avatar");
 
+        GPATextField.setEditable(false);
+        GPATextField.setForeground(new java.awt.Color(0, 0, 0));
+        GPATextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GPATextFieldActionPerformed(evt);
+            }
+        });
+
+        GPAlabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        GPAlabel.setForeground(new java.awt.Color(221, 196, 136));
+        GPAlabel.setText("GPA");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -149,9 +170,15 @@ public class AccountInformation extends javax.swing.JFrame {
                                 .addComponent(studentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(genderLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(genderLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(GPAlabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(GPATextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(fullNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,7 +206,10 @@ public class AccountInformation extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(studentIDLabel)
-                            .addComponent(studentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(studentIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(GPAlabel)
+                                .addComponent(GPATextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(imageAvatarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -220,8 +250,14 @@ public class AccountInformation extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fullNameTextFieldActionPerformed
 
+    private void GPATextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPATextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GPATextFieldActionPerformed
+
     private Account acc;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private UIcomponent.RoundJTextField GPATextField;
+    private javax.swing.JLabel GPAlabel;
     private UIcomponent.RoundJTextField fullNameTextField;
     private javax.swing.JLabel fullnameLabel;
     private javax.swing.JLabel genderLabel;
