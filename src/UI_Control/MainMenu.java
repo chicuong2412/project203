@@ -8,8 +8,8 @@ import userDAO.UserCourses;
 
 public class MainMenu extends javax.swing.JFrame {
 
-    int width = 160;
-    int height = 450;
+    private int width = 160;
+    private int height = 450;
     
     public MainMenu(Account acc) {
         initComponents();
