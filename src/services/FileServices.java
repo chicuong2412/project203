@@ -12,10 +12,6 @@ import static org.apache.poi.ss.usermodel.CellType.NUMERIC;
 import static org.apache.poi.ss.usermodel.CellType.STRING;
 import org.apache.poi.xssf.usermodel.*;
 
-/**
- *
- * @author admin
- */
 public class FileServices {
 
     public static void writeFileExcelFromAccount(String name, ArrayList<Course> courses) {
@@ -246,7 +242,6 @@ public class FileServices {
             File file1 = new File("account.xlsx");
             FileInputStream fis = new FileInputStream("account.xlsx");
             XSSFWorkbook fileExcel = new XSSFWorkbook(fis);
-            System.out.println(fileExcel.getNumberOfSheets());
             XSSFSheet data;
             XSSFRow row;
             XSSFCell cell;
@@ -276,7 +271,6 @@ public class FileServices {
             fis.close();
             fos = new FileOutputStream("account.xlsx");
             fileExcel.write(fos);
-
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FileServices.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
