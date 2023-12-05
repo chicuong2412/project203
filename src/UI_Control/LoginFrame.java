@@ -98,7 +98,7 @@ public class LoginFrame extends javax.swing.JFrame{
 
         welcomeLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 16)); // NOI18N
         welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        welcomeLabel.setText("Wellcome back!");
+        welcomeLabel.setText("Welcome back!");
 
         loginButton.setForeground(new java.awt.Color(2, 30, 68));
         loginButton.setText("Login");
