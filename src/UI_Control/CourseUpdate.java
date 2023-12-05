@@ -424,16 +424,16 @@ public class CourseUpdate extends javax.swing.JFrame {
             temptCourse.setStatus(true);
             tempt.add(temptCourse);
         }
-        
+
         if (checkPrerequisites(this.menu.UserCourses.getCourse(String.valueOf(listIncompleteCourses.getValueAt(row, 0))),
-                tempt)){// check prerequisites including current list completed table
+                tempt)) {// check prerequisites including current list completed table
             changeStatus(listIncompleteCourses, listCompleteCourses, true, row);
         } else {
             JOptionPane.showMessageDialog(this, "You didn't complete the courses prerequisites");
         }
         applyCurrentProgress();
         getTableGPA("", "");
-        
+
     }//GEN-LAST:event_listIncompleteCoursesMouseClicked
 
     private void listCompleteCoursesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCompleteCoursesMouseClicked
@@ -443,22 +443,22 @@ public class CourseUpdate extends javax.swing.JFrame {
         getTableGPA("", "");
     }//GEN-LAST:event_listCompleteCoursesMouseClicked
 
-    private void changeStatus(javax.swing.JTable tableRemoveRow, 
-            javax.swing.JTable tableAddRow, 
-            boolean statusChange, 
-            int row){
+    private void changeStatus(javax.swing.JTable tableRemoveRow,
+            javax.swing.JTable tableAddRow,
+            boolean statusChange,
+            int row) {
         Object[] selectedRow = new Object[3];
         DefaultTableModel tabl = (DefaultTableModel) tableRemoveRow.getModel();
         selectedRow[0] = tableRemoveRow.getValueAt(row, 0);
         selectedRow[1] = tableRemoveRow.getValueAt(row, 1);
-        selectedRow[2] = (statusChange)?"completed":"not completed";
+        selectedRow[2] = (statusChange) ? "completed" : "not completed";
         tabl.removeRow(row);
         DefaultTableModel table = (DefaultTableModel) tableAddRow.getModel();
         tableAddRow.setModel(table);
         table.addRow(selectedRow);
     }
-    
-    private void applyCurrentProgress(){
+
+    private void applyCurrentProgress() {
         DefaultTableModel unComplete = (DefaultTableModel) listIncompleteCourses.getModel();
         for (int i = 0; i < unComplete.getRowCount(); i++) {
             String id = String.valueOf(unComplete.getValueAt(i, 0));
@@ -472,12 +472,12 @@ public class CourseUpdate extends javax.swing.JFrame {
         }
 //        setCourses(this.menu.acc, this.menu.UserCourses.getArrayCourses());
     }
-    
-    private void changeStatus(boolean status, String id){
+
+    private void changeStatus(boolean status, String id) {
         this.menu.UserCourses.getCourse(id).setStatus(status);
     }
-    
-    
+
+
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         this.menu.setVisible(true);
         this.dispose();
@@ -498,8 +498,8 @@ public class CourseUpdate extends javax.swing.JFrame {
             idChangeStatusRadioButton.setEnabled(true);
         }
     }//GEN-LAST:event_nameChangeStatusRadioButtonActionPerformed
-    
-    private void doSearchStatus(){
+
+    private void doSearchStatus() {
         if (idChangeStatusRadioButton.isSelected()) {
             getTableComplete("ID", jSearchKeyStatusChange.getText());
             getTableIncompleted("ID", jSearchKeyStatusChange.getText());
@@ -511,7 +511,7 @@ public class CourseUpdate extends javax.swing.JFrame {
             getTableIncompleted("", jSearchKeyStatusChange.getText());
         }
     }
-    
+
     private void gpaTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gpaTableMouseClicked
         int row = gpaTable.getSelectedRow();
         Object[] selectedRow = new Object[4];
@@ -540,8 +540,8 @@ public class CourseUpdate extends javax.swing.JFrame {
             idChangeGPARadioButton.setEnabled(true);
         }
     }//GEN-LAST:event_nameChangeGPARadioButtonActionPerformed
-    
-    private void doSearchGPA(){
+
+    private void doSearchGPA() {
         if (idChangeGPARadioButton.isSelected()) {
             getTableGPA("ID", jSearchKeyGPA.getText());
         } else if (nameChangeGPARadioButton.isSelected()) {
@@ -550,16 +550,22 @@ public class CourseUpdate extends javax.swing.JFrame {
             getTableGPA("", jSearchKeyGPA.getText());
         }
     }
-    
+
     private void jChangeGPAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jChangeGPAButtonActionPerformed
-        if (!idTextField.getText().equals("") && idTextField.getText()!= null) {
+        if (!idTextField.getText().equals("") && idTextField.getText() != null) {
             Course course = this.menu.UserCourses.getCourse(idTextField.getText());
-            try{
-                course.setGPA(Double.parseDouble(gpaTextField.getText()));
-                this.menu.UserCourses.setCourse(course);
-                setCourses(this.menu.acc, this.menu.UserCourses.getArrayCourses());
-            } catch (Exception e){
-                 JOptionPane.showMessageDialog(this, "GPA must be a number");
+            try {
+                if (Double.parseDouble(gpaTextField.getText()) <= 4
+                        && Double.parseDouble(gpaTextField.getText()) >= 0) {
+                    course.setGPA(Double.parseDouble(gpaTextField.getText()));
+                    this.menu.UserCourses.setCourse(course);
+                    setCourses(this.menu.acc, this.menu.UserCourses.getArrayCourses());
+                } else {
+                    JOptionPane.showMessageDialog(this, "GPA must be under 4.0 and over 0!!!!");
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "GPA must be a number");
             }
         } else {
             JOptionPane.showMessageDialog(this, "Choose at least one course to change");
@@ -589,7 +595,6 @@ public class CourseUpdate extends javax.swing.JFrame {
     private void jSearchKeyGPAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchKeyGPAKeyTyped
         doSearchGPA();
     }//GEN-LAST:event_jSearchKeyGPAKeyTyped
-
 
     private MainMenu menu;
     // Variables declaration - do not modify//GEN-BEGIN:variables
