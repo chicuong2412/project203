@@ -555,9 +555,10 @@ public class CourseUpdate extends javax.swing.JFrame {
         if (!idTextField.getText().equals("") && idTextField.getText() != null) {
             Course course = this.menu.UserCourses.getCourse(idTextField.getText());
             try {
-                if (Double.parseDouble(gpaTextField.getText()) <= 4
-                        && Double.parseDouble(gpaTextField.getText()) >= 0) {
-                    course.setGPA(Double.parseDouble(gpaTextField.getText()));
+                double GPA = Double.parseDouble(gpaTextField.getText());
+                if (GPA <= 4
+                        && GPA >= 0) {
+                    course.setGPA(GPA);
                     this.menu.UserCourses.setCourse(course);
                     setCourses(this.menu.acc, this.menu.UserCourses.getArrayCourses());
                 } else {
