@@ -245,6 +245,7 @@ public class MainMenu extends javax.swing.JFrame {
     
     
     private void closeMenubar(int width, int height) {
+        openMenubarBt.setVisible(true);
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -261,6 +262,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     private void openMenubar(int width, int height) {
+        openMenubarBt.setVisible(false);
         new Thread(new Runnable() {
             @Override
             public void run() {
