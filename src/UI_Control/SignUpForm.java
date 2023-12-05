@@ -1,6 +1,5 @@
 package UI_Control;
 
-import UI_Control.LoginFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import picture.GetImage;
