@@ -64,7 +64,7 @@ public class LoginFrame extends javax.swing.JFrame{
 
         descriptionLabel.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         descriptionLabel.setForeground(new java.awt.Color(255, 255, 255));
-        descriptionLabel.setText("Don't have a accocunt, create one!");
+        descriptionLabel.setText("Don't have an accocunt, create one!");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -81,7 +81,7 @@ public class LoginFrame extends javax.swing.JFrame{
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(11, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))

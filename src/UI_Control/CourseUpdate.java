@@ -643,7 +643,7 @@ public class CourseUpdate extends javax.swing.JFrame {
     }//GEN-LAST:event_jSearchKeyGPAKeyTyped
 
     private void infoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoLabelMouseClicked
-        JOptionPane.showMessageDialog(this, "Click on the course which you have completed or not completed to change it status", 
+        JOptionPane.showMessageDialog(this, "Click on the course which you have completed or not completed to change its status", 
                 "Instructions", JOptionPane.OK_OPTION, new ImageIcon(GetImage.class.getResource("info.png")));
     }//GEN-LAST:event_infoLabelMouseClicked
 
