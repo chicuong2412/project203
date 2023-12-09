@@ -233,42 +233,50 @@ public class SignUpForm extends javax.swing.JFrame {
     }
 
     private void signupLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signupLabelMouseClicked
+        try {
+            int yearAttend = Integer.parseInt(yearAttendTextField.getText());
+            if (checkBlankSpace()) {
+                String usernameText = this.usernameTextField.getText();
+                String passwordText = String.valueOf(this.passwordPasswordField.getPassword());
+                if (getAccount(usernameText) != null) {
+                    JOptionPane.showMessageDialog(this,
+                            "Error this username already existed",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE,
+                            new ImageIcon(GetImage.class.getResource("cancel.png")));
+                } else {
+                    if (getAccountByStudentID(studentIDTextField.getText()) == null) {
+                        int id = JOptionPane.showConfirmDialog(this, "Are you sure to create?");
+                        if (id == JOptionPane.YES_OPTION) {
+                            addAccount(usernameText,
+                                    passwordText,
+                                    fullNameTextField.getText(),
+                                    yearAttend,
+                                    studentIDTextField.getText(),
+                                    (jGenderCombo.getSelectedIndex() == 0) ? true : false);
+                            JOptionPane.showMessageDialog(this, "Succesful!!!");
+                            new LoginFrame(usernameText).setVisible(true);
+                            this.dispose();
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this,
+                                "This student ID existed",
+                                "Same student ID",
+                                JOptionPane.ERROR_MESSAGE,
+                                new ImageIcon(GetImage.class.getResource("cancel.png")));
+                    }
 
-        if (checkBlankSpace()) {
-            String usernameText = this.usernameTextField.getText();
-            String passwordText = String.valueOf(this.passwordPasswordField.getPassword());
-            if (getAccount(usernameText) != null) {
+                }
+            } else {
                 JOptionPane.showMessageDialog(this,
-                        "Error this username already existed",
+                        "Please fill every box",
                         "Error",
                         JOptionPane.ERROR_MESSAGE,
                         new ImageIcon(GetImage.class.getResource("cancel.png")));
-            } else {
-                if (getAccountByStudentID(studentIDTextField.getText()) == null) {
-                    int id = JOptionPane.showConfirmDialog(this, "Are you sure to create?");
-                    if (id == JOptionPane.YES_OPTION) {
-                        addAccount(usernameText,
-                                passwordText,
-                                fullNameTextField.getText(),
-                                Integer.parseInt(yearAttendTextField.getText()),
-                                studentIDTextField.getText(),
-                                (jGenderCombo.getSelectedIndex() == 0) ? true : false);
-                        JOptionPane.showMessageDialog(this, "Succesfull!!!");
-                        new LoginFrame(usernameText).setVisible(true);
-                        this.dispose();
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(this,
-                            "This student ID existed",
-                            "Same student ID",
-                            JOptionPane.ERROR_MESSAGE,
-                            new ImageIcon(GetImage.class.getResource("cancel.png")));
-                }
-
             }
-        } else {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this,
-                    "Please fill every box",
+                    "Error, year attend must be a number",
                     "Error",
                     JOptionPane.ERROR_MESSAGE,
                     new ImageIcon(GetImage.class.getResource("cancel.png")));

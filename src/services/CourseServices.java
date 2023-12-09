@@ -28,8 +28,8 @@ public class CourseServices{
         return result;
     } 
     
-    public static String getPrerequisitesString(Course courses) {
-        ArrayList<String> tempt = courses.getPrerequisites();
+    public static String getPrerequisitesString(Course course) {
+        ArrayList<String> tempt = course.getPrerequisites();
         String result = "";
         for(int i = 0; i < tempt.size(); i++){
            result += tempt.get(i)+ " ";
