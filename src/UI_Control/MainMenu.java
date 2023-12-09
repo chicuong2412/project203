@@ -1,24 +1,30 @@
-
 package UI_Control;
 
 import enity.Account;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import services.FileServices;
 import userDAO.UserCourses;
-
 
 public class MainMenu extends javax.swing.JFrame {
 
     private int width = 160;
     private int height = 450;
-    
+
     public MainMenu(Account acc) {
         initComponents();
         this.acc = acc;
         this.setLocationRelativeTo(null);
         this.username = acc.getUsername();
         this.UserCourses = new UserCourses(acc);
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+                super.windowDeiconified(e);
+                openMenubarBt.setVisible(true);
+            }   
+        });
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -235,15 +241,9 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_openProgressMenuButtonActionPerformed
 
     private void saveInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfoButtonActionPerformed
-         FileServices.writeFileExcelFromAccount(username, this.UserCourses.getArrayCourses());
+        FileServices.writeFileExcelFromAccount(username, this.UserCourses.getArrayCourses());
     }//GEN-LAST:event_saveInfoButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    
-    
-    
     private void closeMenubar(int width, int height) {
         openMenubarBt.setVisible(true);
         new Thread(new Runnable() {
@@ -266,7 +266,7 @@ public class MainMenu extends javax.swing.JFrame {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i <=width; i++) {
+                for (int i = 0; i <= width; i++) {
                     menubar.setSize(i, height);
                     try {
                         Thread.sleep(1);
@@ -277,7 +277,6 @@ public class MainMenu extends javax.swing.JFrame {
         }).start();
     }
 
-    
     public String getUsername() {
         return username;
     }
@@ -305,4 +304,5 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel titleMenuLabel;
     // End of variables declaration//GEN-END:variables
+
 }
