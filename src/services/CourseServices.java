@@ -90,7 +90,7 @@ public class CourseServices{
     }
     
     
-    public static boolean checkPrerequisites(Course course, ArrayList<Course> courses){//check if the prerequisites are completed
+    public static boolean checkPrerequisites(Course course, ArrayList<Course> courses){//check if the prerequisites are completed, in the future users can add courses to the list of theirs
         ArrayList<String> coursesCompleted = getListByStatus(courses, true);
         for (int i = 0; i < course.getPrerequisites().size();i++){
                 if ((!coursesCompleted.contains(course.getPrerequisites().get(i)) || course.isStatus()) 
