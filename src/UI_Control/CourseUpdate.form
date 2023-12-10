@@ -128,7 +128,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jSearchKeyStatusChange" min="-2" pref="261" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="infoLabel" min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="infoLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -148,11 +148,11 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jSearchKeyStatusChange" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="infoLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                                          <Component id="infoLabel" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="idChangeStatusRadioButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>

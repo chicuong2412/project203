@@ -8,7 +8,7 @@ import picture.GetImage;
 
 
 
-public class IconSize_Services {
+public class IconSize_Services {//Raven
     
     private String path;
     private JLabel lable;

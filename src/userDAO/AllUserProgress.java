@@ -8,7 +8,7 @@ import java.util.Set;
 import services.FileServices;
 
 
-public abstract class AllUserProgress extends FileServices{// new AllUserProgess()
+public abstract class AllUserProgress extends FileServices{
     public static HashMap<Account, ArrayList<Course>> data = readAllUsersCourses();
     
     public abstract Account getAcc();
