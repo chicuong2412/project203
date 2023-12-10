@@ -34,7 +34,6 @@ public class TableAllInformation {
                 }
             } else if (each.getID().contains(searchKey) && each.getName().contains(searchKey)) {
                 this.model.addRow(createRow(each));
-
             }
         }
         return this.model;
