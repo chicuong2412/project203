@@ -162,7 +162,9 @@ public class MainMenu extends javax.swing.JFrame {
         titleLabel.setText("Welcome to Course Self-Management");
         jPanel1.add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 470, -1));
 
+        openAvailableUIButton.setBackground(new java.awt.Color(255, 255, 255));
         openAvailableUIButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        openAvailableUIButton.setForeground(new java.awt.Color(0, 51, 255));
         openAvailableUIButton.setText("Available Courses");
         openAvailableUIButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +173,9 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jPanel1.add(openAvailableUIButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 240, 50));
 
+        openProgressMenuButton.setBackground(new java.awt.Color(255, 255, 255));
         openProgressMenuButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        openProgressMenuButton.setForeground(new java.awt.Color(0, 51, 255));
         openProgressMenuButton.setText("Progress Menu");
         openProgressMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,7 +184,9 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jPanel1.add(openProgressMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 190, 40));
 
+        saveInfoButton.setBackground(new java.awt.Color(255, 255, 255));
         saveInfoButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        saveInfoButton.setForeground(new java.awt.Color(0, 51, 255));
         saveInfoButton.setText("Save Change");
         saveInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

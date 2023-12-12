@@ -82,6 +82,7 @@ public class CourseUpdate extends javax.swing.JFrame {
         jSearchKeyGPA = new UIcomponent.RoundJTextField();
         infoGPAlabel = new javax.swing.JLabel();
         RefreshBt = new UIcomponent.CustomJButton();
+        showGPAlabel = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -322,6 +323,15 @@ public class CourseUpdate extends javax.swing.JFrame {
             }
         });
 
+        showGPAlabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        showGPAlabel.setForeground(new java.awt.Color(255, 255, 255));
+        showGPAlabel.setText("Click here to see GPA!!!");
+        showGPAlabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                showGPAlabelMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout changeGPAPanelLayout = new javax.swing.GroupLayout(changeGPAPanel);
         changeGPAPanel.setLayout(changeGPAPanelLayout);
         changeGPAPanelLayout.setHorizontalGroup(
@@ -331,9 +341,9 @@ public class CourseUpdate extends javax.swing.JFrame {
                 .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(changeGPAPanelLayout.createSequentialGroup()
                         .addComponent(gpaTableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
                         .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(changeGPAPanelLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
                                 .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(idLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -348,9 +358,12 @@ public class CourseUpdate extends javax.swing.JFrame {
                                     .addComponent(gpaTextField)
                                     .addComponent(idTextField, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(65, 65, 65))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, changeGPAPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
-                                .addComponent(jChangeGPAButton)
+                            .addGroup(changeGPAPanelLayout.createSequentialGroup()
+                                .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(showGPAlabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(changeGPAPanelLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                                        .addComponent(jChangeGPAButton)))
                                 .addGap(134, 134, 134))))
                     .addGroup(changeGPAPanelLayout.createSequentialGroup()
                         .addGroup(changeGPAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -401,7 +414,9 @@ public class CourseUpdate extends javax.swing.JFrame {
                             .addComponent(gpaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(gpaLabel))
                         .addGap(34, 34, 34)
-                        .addComponent(jChangeGPAButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jChangeGPAButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(showGPAlabel))
                     .addComponent(gpaTableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
@@ -656,6 +671,10 @@ public class CourseUpdate extends javax.swing.JFrame {
         getTableGPA("", "");
     }//GEN-LAST:event_RefreshBtActionPerformed
 
+    private void showGPAlabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showGPAlabelMouseClicked
+        new AccountInformation(this.menu.acc).setVisible(true);
+    }//GEN-LAST:event_showGPAlabelMouseClicked
+
     private MainMenu menu;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private UIcomponent.CustomJButton RefreshBt;
@@ -685,6 +704,7 @@ public class CourseUpdate extends javax.swing.JFrame {
     private javax.swing.JRadioButton nameChangeStatusRadioButton;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField nameTextField;
+    private javax.swing.JLabel showGPAlabel;
     private javax.swing.JLabel statusLabel;
     private javax.swing.JTextField statusTextField;
     // End of variables declaration//GEN-END:variables
