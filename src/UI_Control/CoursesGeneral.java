@@ -357,7 +357,7 @@ public class CoursesGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_jSearchAllFieldKeyTyped
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        this.menu.setVisible(true);
+        this.menu.closeMenubar(WIDTH, HEIGHT);
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 

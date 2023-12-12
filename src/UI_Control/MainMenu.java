@@ -22,7 +22,9 @@ public class MainMenu extends javax.swing.JFrame {
             public void windowDeiconified(WindowEvent e) {
                 super.windowDeiconified(e);
                 openMenubarBt.setVisible(true);
-            }   
+            }
+            
+            
         });
     }
 
@@ -36,6 +38,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        openMenubarBt = new javax.swing.JButton();
         menubar = new javax.swing.JPanel();
         titleMenuLabel = new javax.swing.JLabel();
         profileAccountLable = new javax.swing.JLabel();
@@ -48,7 +51,6 @@ public class MainMenu extends javax.swing.JFrame {
         openAvailableUIButton = new javax.swing.JButton();
         openProgressMenuButton = new javax.swing.JButton();
         saveInfoButton = new javax.swing.JButton();
-        openMenubarBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Course Self_management");
@@ -56,6 +58,14 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        openMenubarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/M.png"))); // NOI18N
+        openMenubarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openMenubarBtActionPerformed(evt);
+            }
+        });
+        jPanel1.add(openMenubarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
         menubar.setBackground(new java.awt.Color(255, 255, 255));
         menubar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -162,7 +172,9 @@ public class MainMenu extends javax.swing.JFrame {
         titleLabel.setText("Welcome to Course Self-Management");
         jPanel1.add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 470, -1));
 
+        openAvailableUIButton.setBackground(new java.awt.Color(255, 255, 255));
         openAvailableUIButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        openAvailableUIButton.setForeground(new java.awt.Color(0, 51, 255));
         openAvailableUIButton.setText("Available Courses");
         openAvailableUIButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +183,9 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jPanel1.add(openAvailableUIButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 240, 50));
 
+        openProgressMenuButton.setBackground(new java.awt.Color(255, 255, 255));
         openProgressMenuButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        openProgressMenuButton.setForeground(new java.awt.Color(0, 51, 255));
         openProgressMenuButton.setText("Progress Menu");
         openProgressMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,7 +194,9 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jPanel1.add(openProgressMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 190, 40));
 
+        saveInfoButton.setBackground(new java.awt.Color(255, 255, 255));
         saveInfoButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        saveInfoButton.setForeground(new java.awt.Color(0, 51, 255));
         saveInfoButton.setText("Save Change");
         saveInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,14 +204,6 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(saveInfoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
-
-        openMenubarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/M.png"))); // NOI18N
-        openMenubarBt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openMenubarBtActionPerformed(evt);
-            }
-        });
-        jPanel1.add(openMenubarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,6 +229,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void editAccountLableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editAccountLableMouseClicked
         new AccountInfomationChange(acc, this).setVisible(true);
+        closeMenubar(WIDTH, HEIGHT);
     }//GEN-LAST:event_editAccountLableMouseClicked
 
     private void logoutLableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutLableMouseClicked
@@ -230,21 +239,25 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void profileAccountLableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileAccountLableMouseClicked
         new AccountInformation(this.acc).setVisible(true);
+        closeMenubar(WIDTH, HEIGHT);
     }//GEN-LAST:event_profileAccountLableMouseClicked
 
     private void openAvailableUIButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openAvailableUIButtonActionPerformed
         new CoursesGeneral(this).setVisible(true);
+        closeMenubar(WIDTH, HEIGHT);
     }//GEN-LAST:event_openAvailableUIButtonActionPerformed
 
     private void openProgressMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openProgressMenuButtonActionPerformed
         new CourseUpdate(this).setVisible(true);
+        closeMenubar(WIDTH, HEIGHT);
     }//GEN-LAST:event_openProgressMenuButtonActionPerformed
 
     private void saveInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfoButtonActionPerformed
         FileServices.writeFileExcelFromAccount(username, this.UserCourses.getArrayCourses());
+        closeMenubar(WIDTH, HEIGHT);
     }//GEN-LAST:event_saveInfoButtonActionPerformed
 
-    private void closeMenubar(int width, int height) {
+    public void closeMenubar(int width, int height) {
         openMenubarBt.setVisible(true);
         new Thread(new Runnable() {
             @Override

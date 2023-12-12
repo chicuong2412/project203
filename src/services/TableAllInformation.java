@@ -29,7 +29,7 @@ public class TableAllInformation {
              if (!searchKey.equals("")) {
                 if (choice.equals("ID") && each.getID().contains(searchKey)) {
                     this.model.addRow(createRow(each));
-                } else if (choice.equals("NAME") && choice.equals("NAME") && each.getName().contains(searchKey)) {
+                } else if (choice.equals("NAME") && each.getName().contains(searchKey)) {
                     this.model.addRow(createRow(each));
                 }
             } else if (each.getID().contains(searchKey) && each.getName().contains(searchKey)) {

@@ -102,7 +102,7 @@ public class AccountInfomationChange extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(165, 165, 165)
                 .addComponent(titleLabel)
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addContainerGap(203, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +133,7 @@ public class AccountInfomationChange extends javax.swing.JFrame {
 
         oldPasswordLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         oldPasswordLabel.setForeground(new java.awt.Color(221, 196, 136));
-        oldPasswordLabel.setText("Old password");
+        oldPasswordLabel.setText("Current password");
 
         newPasswordLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         newPasswordLabel.setForeground(new java.awt.Color(221, 196, 136));
@@ -232,7 +232,7 @@ public class AccountInfomationChange extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 28, Short.MAX_VALUE))
+                .addGap(0, 2, Short.MAX_VALUE))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
