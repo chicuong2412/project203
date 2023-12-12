@@ -291,7 +291,7 @@ public class AccountInfomationChange extends javax.swing.JFrame {
                     }
                 } else {
                     JOptionPane.showMessageDialog(this,
-                            "Type the correct password in old password field",
+                            "Type the correct password in current password field",
                             "Wrong password",
                             JOptionPane.ERROR_MESSAGE);
                 }
