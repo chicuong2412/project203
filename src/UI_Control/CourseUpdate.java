@@ -539,8 +539,8 @@ public class CourseUpdate extends javax.swing.JFrame {
 
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        this.menu.setVisible(true);
         this.dispose();
+        this.menu.closeMenubar(WIDTH, HEIGHT);
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void idChangeStatusRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idChangeStatusRadioButtonActionPerformed
