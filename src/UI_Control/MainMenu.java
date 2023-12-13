@@ -22,9 +22,7 @@ public class MainMenu extends javax.swing.JFrame {
             public void windowDeiconified(WindowEvent e) {
                 super.windowDeiconified(e);
                 openMenubarBt.setVisible(true);
-            }
-            
-            
+            }            
         });
     }
 
@@ -83,7 +81,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         editAccountLable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        editAccountLable.setText("Edit Accocunt");
+        editAccountLable.setText("Edit Account");
         editAccountLable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 editAccountLableMouseClicked(evt);
