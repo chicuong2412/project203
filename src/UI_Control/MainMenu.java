@@ -3,6 +3,9 @@ package UI_Control;
 import enity.Account;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import picture.GetImage;
 import services.FileServices;
 import userDAO.UserCourses;
 
@@ -253,6 +256,11 @@ public class MainMenu extends javax.swing.JFrame {
     private void saveInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveInfoButtonActionPerformed
         FileServices.writeFileExcelFromAccount(username, this.UserCourses.getArrayCourses());
         closeMenubar(WIDTH, HEIGHT);
+        JOptionPane.showMessageDialog(this,
+                                "Succesfully!!!",
+                                "Successfully",
+                                JOptionPane.INFORMATION_MESSAGE,
+                                new ImageIcon(GetImage.class.getResource("complete.png")));
     }//GEN-LAST:event_saveInfoButtonActionPerformed
 
     public void closeMenubar(int width, int height) {
