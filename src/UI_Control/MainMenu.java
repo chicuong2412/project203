@@ -38,7 +38,7 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
         openMenubarBt = new javax.swing.JButton();
         menubar = new javax.swing.JPanel();
         titleMenuLabel = new javax.swing.JLabel();
@@ -46,7 +46,7 @@ public class MainMenu extends javax.swing.JFrame {
         editAccountLable = new javax.swing.JLabel();
         logoutLable = new javax.swing.JLabel();
         closeMenubarBt = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        decorPanel = new javax.swing.JPanel();
         imageLabel = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
         openAvailableUIButton = new javax.swing.JButton();
@@ -57,8 +57,8 @@ public class MainMenu extends javax.swing.JFrame {
         setTitle("Course Self_management");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        mainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         openMenubarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/M.png"))); // NOI18N
         openMenubarBt.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +66,7 @@ public class MainMenu extends javax.swing.JFrame {
                 openMenubarBtActionPerformed(evt);
             }
         });
-        jPanel1.add(openMenubarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
+        mainPanel.add(openMenubarBt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
         menubar.setBackground(new java.awt.Color(255, 255, 255));
         menubar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -148,30 +148,30 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(229, Short.MAX_VALUE))
         );
 
-        jPanel1.add(menubar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 450));
+        mainPanel.add(menubar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 450));
 
-        jPanel3.setBackground(new java.awt.Color(2, 30, 68));
+        decorPanel.setBackground(new java.awt.Color(2, 30, 68));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout decorPanelLayout = new javax.swing.GroupLayout(decorPanel);
+        decorPanel.setLayout(decorPanelLayout);
+        decorPanelLayout.setHorizontalGroup(
+            decorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 770, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        decorPanelLayout.setVerticalGroup(
+            decorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 770, -1));
+        mainPanel.add(decorPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 770, -1));
 
         imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Workbg.jpg"))); // NOI18N
-        jPanel1.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, -1, -1));
+        mainPanel.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, -1, -1));
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 3, 26)); // NOI18N
         titleLabel.setForeground(new java.awt.Color(102, 102, 102));
         titleLabel.setText("Welcome to Course Self-Management");
-        jPanel1.add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 470, -1));
+        mainPanel.add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 470, -1));
 
         openAvailableUIButton.setBackground(new java.awt.Color(255, 255, 255));
         openAvailableUIButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -182,7 +182,7 @@ public class MainMenu extends javax.swing.JFrame {
                 openAvailableUIButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(openAvailableUIButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 240, 50));
+        mainPanel.add(openAvailableUIButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 240, 50));
 
         openProgressMenuButton.setBackground(new java.awt.Color(255, 255, 255));
         openProgressMenuButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -193,7 +193,7 @@ public class MainMenu extends javax.swing.JFrame {
                 openProgressMenuButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(openProgressMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 190, 40));
+        mainPanel.add(openProgressMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 190, 40));
 
         saveInfoButton.setBackground(new java.awt.Color(255, 255, 255));
         saveInfoButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -204,17 +204,17 @@ public class MainMenu extends javax.swing.JFrame {
                 saveInfoButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(saveInfoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
+        mainPanel.add(saveInfoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
 
         pack();
@@ -309,11 +309,11 @@ public class MainMenu extends javax.swing.JFrame {
     public UserCourses UserCourses;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton closeMenubarBt;
+    private javax.swing.JPanel decorPanel;
     private javax.swing.JLabel editAccountLable;
     private javax.swing.JLabel imageLabel;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel logoutLable;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel menubar;
     private javax.swing.JButton openAvailableUIButton;
     private javax.swing.JButton openMenubarBt;
